@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albasec</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/logo.png" alt="ALBASEC">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Domov</a></li>
+                    <li><a href="#">O nás</a></li>
+                    <li><a href="#">Kariéra</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="img/X.png" alt="X"></a>
+                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="hero">
+            <h1>Bezpečnostná služba</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button id="requestButton">Žiadosť</button>
+        </div>
+    </header>
+    <main>
+        <section class="services">
+            <h2>Naše služby</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+               dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+               sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="service-buttons">
+                <div class="service-button">
+                    <img src="img/camera.png" alt="Camera Icon">
+                    <span class="button-text">Elektronická ochrana</span>
+                    <span class="button-subtext">Zamedzovanie nedovoleného vstupu</span>
+                </div>
+                <div class="service-button">
+                    <img src="img/serviceIcon2.png" alt="Icon 2">
+                    <span class="button-text">Fyzická ochrana osôb - bodyguard</span>
+                    <span class="button-subtext">Ochrana zdravia, rodiny a toho najdôležitejšieho</span>
+                </div>
+                <div class="service-button">
+                    <img src="img/house.png" alt="Icon 3">
+                    <span class="button-text">Fyzická ochrana v priestoroch zákazníka</span>
+                    <span class="button-subtext">Poskytujeme uniformovanú strážnu službu.</span>
+                </div>
+                <div class="service-button">
+                    <img src="img/car.png" alt="Icon 4">
+                    <span class="button-text">Prevoz cenín</span>
+                    <span class="button-subtext">Bezpečný prevoz veľkých obnosov</span>
+                </div>
+                <div class="service-button">
+                    <img src="img/dog.png" alt="Icon 5">
+                    <span class="button-text">Hliadka pešej obchôdzky objektu</span>
+                    <span class="button-subtext">Kontrola neporušenosti plášťa budovy</span>
+                </div>
+            </div>
+            <div id="service-content"></div>
+        </section>
+        <section class="stats">
+            <div>
+                <h3>Počet zákazníkov</h3>
+                <img src="img/customers.png" alt="Customers Icon">
+                <p id="customers">0</p>
+            </div>
+            <div>
+                <h3>Rokov praxe</h3>
+                <img src="img/years.png" alt="Years Icon">
+                <p id="experience">0</p>
+            </div>
+            <div>
+                <h3>Nasadenie</h3>
+                <img src="img/time.png" alt="Deployment Icon">
+                <p id="deployment">0</p>
+            </div>
+        </section>
+        
+        <section class="map">
+            <img src="img/map.png" alt="Map of Slovakia">
+        </section>
+
+        <section class="contact-us">
+            <div class="contact-info">
+                <h2>Kontakt</h2>
+                <p>Adresa: Adresová 123, 456 78 Mesto</p>
+                <p>Telefónne číslo: +421 123 456 789</p>
+                <p>Email: info@albasec.sk</p>
+            </div>
+            <div class="contact-form">
+                
+                <form id="contactForm" action="#" method="POST">
+                    <h2>Napíšte nám</h2> <!-- Moved above the form -->
+                    <div class="form-group">
+                        <label for="name">Meno:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Správa:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Odoslať</button>
+                </form>
+                <div id="successMessage" class="success-message"></div>
+            </div>
+        </section>
+        
+    </main>
+    <script src="script.js"></script>
+    <script src="form.js"></script> 
+</body>
+</html>

@@ -1,15 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const serviceButtons = document.querySelectorAll('.service-button');
-    const serviceContent = document.getElementById('service-content');
-
-    serviceButtons.forEach(button => {
-        button.addEventListener('click', async () => {
-            serviceContent.innerHTML = 'Loading...';
-            const serviceText = await fetchServiceText(button.textContent);
-            serviceContent.innerHTML = `<p>${serviceText}</p>`;
-        });
-    });
-
     const form = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
 

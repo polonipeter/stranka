@@ -13,7 +13,6 @@ header {
     text-align: center;
     position: relative;
 }
-
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -26,13 +25,19 @@ header {
 
 nav ul {
     list-style: none;
-    padding: 0;
+    padding: 15px;
     margin: 0;
     display: flex;
 }
 
 nav li {
     margin: 0 20px;
+    padding: 10px;
+}
+
+nav li:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 nav a {
@@ -40,9 +45,16 @@ nav a {
     text-decoration: none;
 }
 
+p {
+    font-weight: bold; /* Tučné písmo */
+} 
+
 .social-icons img {
     width: 50px; /* Increase the width for larger icons */
     height: auto; /* Maintain aspect ratio */
+}
+.social-icons img:hover {
+    transform: scale(1.1);
 }
 
 .hero {
@@ -72,20 +84,26 @@ nav a {
 }
 
 .hero h1 {
-    margin: 0;
+    margin-right: 40%;
     font-size: 3em; /* Example: Increase font size for emphasis */
 }
 
 .hero p {
-    margin: 20px 0;
     font-size: 1.2em; /* Example: Increase font size for readability */
+    max-width: 300px; /* Maximálna šírka pre element <p> */
+    padding-left: 15%;
 }
 
 .services {
     text-align: center;
     padding: 50px 20px;
-    background-color: #e0e0e0; /* Light grey background color */
+    background: linear-gradient(to top, #e0e0e0, #3b3a3a); /* Lineárny gradient z jednej sedej na druhú */
     margin-bottom: 10px; /* Adjusted margin bottom */
+}
+
+.services p {
+    max-width: 900px; /* Maximálna šírka pre element <p> */
+    margin: 0 auto; /* Zarovnanie do stredu */
 }
 
 .service-buttons {
@@ -99,22 +117,29 @@ nav a {
     flex-direction: column;
     align-items: center;
     margin: 0 10px;
-    border: 2px solid #fff; /* White border */
-    padding: 30px; /* Increased padding */
-    width: 160px; /* Increased width */
-    height: 160px; /* Increased height */
-    text-align: center; /* Center align text */
-    border-radius: 5px; /* Rounded corners */
-    transition: all 0.3s ease; /* Smooth transition */
+    border: 2px solid #fff; /* Biele ohraničenie */
+    padding: 30px; /* Zvýšené oplátky */
+    width: 160px; /* Zvýšená šírka */
+    height: 160px; /* Zvýšená výška */
+    text-align: center; /* Zarovnanie textu na stred */
+    border-radius: 5px; /* Zaoblené rohy */
+    transition: all 0.3s ease; /* Hladký prechod */
+    font-weight: bold; /* Tučné písmo */
 }
 
 .service-button:hover {
-    transform: scale(1.05); /* Scale effect on hover */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Shadow effect on hover */
+    transform: scale(1.05); /* Efekt zväčšenia pri prechode myšou */
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.6); /* Sivý a dlhší tieňový efekt pri prechode myšou */
 }
 
 .service-button img {
-    width: 60px; /* Adjust the size of the icon */
+    width: 60px; /* Prispôsobte veľkosť ikony */
+    filter: grayscale(100%); /* Obrázky budú čierne (bez farby) */
+    transition: filter 0.3s; /* Prechodový efekt pre filter */
+}
+
+.service-button:hover img {
+    filter: grayscale(0%) invert(100%); /* Obrázky sa zafarbujú pri prechode myšou */
 }
 
 .service-button .button-text {
@@ -141,13 +166,12 @@ nav a {
 .stats div {
     flex: 1;
     padding: 20px;
-    text-align: center;
     max-width: 120px;
     box-sizing: border-box;
 }
 
 .stats h3 {
-    margin: 0;
+    margin: 0 auto; /* Zarovnanie do stredu */
     font-size: 1.5em;
 }
 
@@ -156,12 +180,14 @@ nav a {
     font-size: 1.2em;
     color: #0a0a0a;
     animation: countUp 2s ease-out forwards;
+    font-size: 1.5em;
 }
 
 .stats img {
-    max-width: 30px; /* Adjusted image size */
+    width: 60px; /* Adjusted image size */
     height: auto;
 }
+
 
 .contact-us {
     background-image: url('img/security.png'); /* Replace with your image path */
@@ -184,7 +210,13 @@ nav a {
 
 .contact-info h2 {
     margin-bottom: 10px;
-    font-size: 2em;
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
+.contact-info h3{
+    font-size: 30px;
+    padding-bottom: 20px;
 }
 
 .contact-info p {
@@ -341,4 +373,91 @@ button[type="submit"]:hover {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+
+
+
+
+.copyright {
+    background-color: #000; /* Čierne pozadie */
+    color: #fff; /* Biely text */
+    padding: 1px; /* Odsadenie */
+    text-align: center; /* Zarovnanie textu na stred */
+    width: 100%; /* Plná šírka */
+    box-sizing: border-box; /* Zahrnutie paddingu v celkovej šírke */
+}
+
+.questions {
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #f0f0f0;
+}
+
+.questions h2{
+    text-align: center;
+}
+
+.question span{
+    font-weight: bold; /* Tučné písmo */
+}
+
+.question {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 20px;
+    background-color: #fff;
+}
+.toggle-icon {
+    transition: transform 0.5s ease;
+}
+.toggle-icon.open {
+    transform: rotate(180deg);
+}
+
+
+.clients p{
+    text-align: center;
+}
+
+.customer-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Medzera medzi štvorcami */
+    max-width: 65%; /* Obsah zaberá maximálne 60% šírky obrazovky */
+    margin: auto; /* Vycentruje kontajner */
+}
+
+.customer-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.customer-box img {
+    max-width: 100%;
+    max-height: 33%; /* Obrázok zaberá 1/3 výšky */
+}
+
+.customer-box p {
+    margin: 10px 0 0 0;
+    font-size: 16px; /* Môžeš upraviť podľa potreby */
 }

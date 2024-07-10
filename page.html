@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="sk">
-<!-- mali by sme upravit font na niektorych miestach nech je modernejsi -->
-<!-- musime upravit styl pop-up formularov a zaoblit tlacitka Domov, o nas atd... -->
+<!-- musime upravit styl pop-up formularov -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Albasec</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        .leaflet-popup-content-wrapper {
+            background-color: white; /* Popup background color */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Padding inside the popup */
+            box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Drop shadow */
+        }
+        .leaflet-popup-content {
+            font-size: 14px; /* Popup content font size */
+            line-height: 1.4; /* Line height for readability */
+        }
+        .leaflet-popup-close-button {
+            display: none; /* Hide the close button */
+        }
+        
+    </style>
+    
 </head>
 
 <body>
@@ -166,7 +185,7 @@
         </section>
 
         <section class="map">
-            <img src="img/map.png" alt="Map of Slovakia">
+            <div id="map" class="map-container"></div>
         </section>
 
         <section class="contact-us">
@@ -206,6 +225,7 @@
         </section>
 
     </main>
+    <script src="map.js"></script>
     <script src="script.js"></script>
     <script src="form.js"></script>
 </body>

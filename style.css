@@ -7,9 +7,9 @@ body {
 }
 
 header {
-    background-color: #080808; /* Darker grey background color */
+    /*background-color: #080808; /* Darker grey background color */
     color: #fff; /* White text color */
-    padding: 20px;
+    /*padding: 20px;*/
     text-align: center;
     position: relative;
 }
@@ -33,13 +33,13 @@ nav ul {
 nav li {
     margin: 0 10px; /* Reduced margin for closer spacing */
     padding: 10px;
-    border-radius: 50%; /* Make the li round */
+    /*border-radius: 50%; /* Make the li round */
     overflow: hidden; /* Ensure content doesn't overflow the rounded shape */
 }
 
 nav li:hover {
-    transform: scale(1.1); /* Scale up on hover */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* White shadow on hover */
+    transform: scale(1.2); /* Scale up on hover */
+    /*box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* White shadow on hover */
 }
 
 
@@ -140,10 +140,6 @@ p {
     width: 60px; /* Prispôsobte veľkosť ikony */
     filter: grayscale(100%); /* Obrázky budú čierne (bez farby) */
     transition: filter 0.3s; /* Prechodový efekt pre filter */
-}
-
-.service-button:hover img {
-    filter: grayscale(0%) invert(100%); /* Obrázky sa zafarbujú pri prechode myšou */
 }
 
 .service-button .button-text {
@@ -446,6 +442,7 @@ button[type="submit"]:hover {
 
 .questions h2 {
     text-align: center;
+    font-size: 25px;
 }
 
 .question {
@@ -464,6 +461,7 @@ button[type="submit"]:hover {
 
 .question span {
     font-weight: bold; /* Tučný text */
+    font-size: 19px;
 }
 
 .answer {
@@ -472,6 +470,7 @@ button[type="submit"]:hover {
     transition: max-height 0.3s ease-out, background-color 0.3s ease; /* Hladký prechod pre max-height a farbu pozadia */
     padding: 0 20px;
     background-color: rgba(0, 0, 0, 0.15); /* Počiatočná farba pozadia */
+    font-size: 19px;
 }
 
 .answer:hover {
@@ -509,7 +508,6 @@ button[type="submit"]:hover {
 .customer-box {
     width: 100px;
     height: 100px;
-    background-color: #ccc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -526,13 +524,13 @@ button[type="submit"]:hover {
     box-shadow: 0 0 20px white; /* Sivý a dlhší tieňový efekt pri prechode myšou */
 }
 
-.customer-box:hover img {
-    filter: grayscale(0%) invert(100%); /* Obrázky sa zafarbujú pri prechode myšou */
-}
-
 .customer-box img {
     max-width: 100%;
     max-height: 33%; /* Obrázok zaberá 1/3 výšky */
+}
+
+.clients p {
+    font-size: 24px; /* Môžeš upraviť podľa potreby */
 }
 
 .customer-box p {

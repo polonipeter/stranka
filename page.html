@@ -29,8 +29,8 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
+    <header id="header">
+        <div class="header-container" id="headerContainer">
             <div class="logo">
                 <img src="img/logo.png" alt="ALBASEC">
             </div>
@@ -48,13 +48,16 @@
                 <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
             </div>
         </div>
-        <div class="hero">
+        
+        
+        
+    </header>
+    <div class="hero">
             <h1>Bezpečnostná služba</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.</p>
             <button id="requestButton">Žiadosť</button>
         </div>
-    </header>
     <main>
         <section class="services">
             <h2>Naše služby</h2>
@@ -212,8 +215,8 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Správa:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
+                        <textarea id="message" name="message" rows="5"  required></textarea>
+                    </div>                    
                     <button type="submit">Odoslať</button>
                 </form>
                 <div id="successMessage" class="success-message"></div>
@@ -228,6 +231,10 @@
     <script src="map.js"></script>
     <script src="script.js"></script>
     <script src="form.js"></script>
+    <script src="move.js"></script>
+
+
+    
 </body>
 
 </html>

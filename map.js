@@ -1,5 +1,20 @@
 // Initialize Leaflet map
-var map = L.map('map').setView([48.148, 17.106], 10); // Adjusted zoom level and center for Slovakia
+
+var slovakiaSouthWest = L.latLng(47.6, 16.8),
+    slovakiaNorthEast = L.latLng(49.6, 22.6),
+    slovakiaBounds = L.latLngBounds(slovakiaSouthWest, slovakiaNorthEast);
+
+
+var map = L.map('map', {
+    center: [48.75, 19.5], // Centered approximately in Slovakia
+    zoom: 8, // Adjusted zoom level for Slovakia view
+    
+    maxBoundsViscosity: 1.0, // Ensure the map doesn't move outside the bounds
+    zoomControl: false, // Disable zoom control initially
+    dragging: false,     // Disable dragging initially
+    doubleClickZoom: false, // Disable double click zoom initially
+    scrollWheelZoom: false  // Disable scroll wheel zoom initially
+});
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -78,3 +93,12 @@ for (var k = 0; k < numberOfNitraMarkers; k++) {
         this.closePopup();
     });
 }
+
+map.once('click', function() {
+    // Enable zoom control, dragging, double click zoom, and scroll wheel zoom
+    map.zoomControl = L.control.zoom({ position: 'topright' });
+    map.addControl(map.zoomControl);
+    map.dragging.enable();
+    map.doubleClickZoom.enable();
+    map.scrollWheelZoom.enable();
+});

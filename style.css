@@ -9,15 +9,28 @@ body {
 header {
     /*background-color: #080808; /* Darker grey background color */
     color: #fff; /* White text color */
-    /*padding: 20px;*/
     text-align: center;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 .header-container {
+    background-color: #333;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    transition: top 0.3s ease-in-out;
 }
+.header-container.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+    
 
 .logo img {
     width: 200px;
@@ -69,6 +82,8 @@ p {
     padding: 150px 20px;
     text-align: center;
     color: #fff;
+    position: relative; /* Ensure the hero section remains in place */
+    z-index: 1; /* Ensure the hero section is above the header */
 }
 
 .hero #requestButton {
@@ -258,10 +273,12 @@ p {
     font-size: 1em;
     border: 1px solid #ccc;
     border-radius: 4px;
+    resize: none; 
+    
 }
 
 .form-group textarea {
-    resize: vertical;
+    resize: none; 
 }
 
 
@@ -361,6 +378,7 @@ button[type="submit"]:hover {
     border-radius: 4px;
     font-size: 1rem;
     transition: border-color 0.3s;
+    resize: none; 
 }
 
 .popup-form input[type="text"]:focus,
@@ -372,7 +390,7 @@ button[type="submit"]:hover {
 
 /* Textarea */
 .popup-form textarea {
-    resize: vertical;
+    resize: none; 
 }
 
 /* Submit button */
@@ -442,7 +460,7 @@ button[type="submit"]:hover {
 
 .questions h2 {
     text-align: center;
-    font-size: 25px;
+    font-size: 24px;
 }
 
 .question {
@@ -461,7 +479,7 @@ button[type="submit"]:hover {
 
 .question span {
     font-weight: bold; /* Tučný text */
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .answer {
@@ -470,7 +488,7 @@ button[type="submit"]:hover {
     transition: max-height 0.3s ease-out, background-color 0.3s ease; /* Hladký prechod pre max-height a farbu pozadia */
     padding: 0 20px;
     background-color: rgba(0, 0, 0, 0.15); /* Počiatočná farba pozadia */
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .answer:hover {

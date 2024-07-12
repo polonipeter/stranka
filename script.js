@@ -1,22 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
 
     // Add event listener to the form for form submission
     form.addEventListener('submit', function(event) {
         // Prevent default form submission
         event.preventDefault();
-
-        // Display success message
-        successMessage.innerText = 'Správa bola úspešne odoslaná!';
-        successMessage.style.display = 'block'; // Make success message visible
-
-        // Reset form fields after 3 seconds
-        setTimeout(function() {
-            form.reset();
-            successMessage.style.display = 'none'; // Hide success message again
-        }, 3000);
-
+        alert('Správa bola úspešne odoslaná!');
+        form.reset()
         // Optional: You can add code here to send the form data to the server
         // For example, using fetch or XMLHttpRequest to send data asynchronously
         // and handle any server-side processing or validation

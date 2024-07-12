@@ -501,7 +501,7 @@ button[type="submit"]:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Medzera medzi štvorcami */
-    max-width: 65%; /* Obsah zaberá maximálne 60% šírky obrazovky */
+    max-width: 1000px; /* Obsah zaberá maximálne 60% šírky obrazovky */
     margin: auto; /* Vycentruje kontajner */
     justify-content: center; /* Center-align items */
 }
@@ -548,6 +548,9 @@ button[type="submit"]:hover {
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
+
+#map:hover{box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);}
+
 div.leaflet-control-attribution.leaflet-control {
     display: none !important;
 }

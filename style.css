@@ -646,6 +646,12 @@ div.leaflet-control-attribution.leaflet-control {
     cursor: pointer;
 }
 
+.image-container img:hover {
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
 .overlay {
     display: none; /* Skryté pred kliknutím */
     position: fixed;
@@ -672,4 +678,9 @@ div.leaflet-control-attribution.leaflet-control {
     transition: transform 0.5s ease; /* Jemný prechod pri zväčšení */
     max-width: none; /* Odstránenie maximálnych šírok pre zväčšenie */
     max-height: none; /* Odstránenie maximálnych výšok pre zväčšenie */
+}
+
+
+@media (max-width: 600px) {
+    p{color: black;}
 }

@@ -65,6 +65,16 @@ p {
     font-weight: bold; /* Tučné písmo */
 } 
 
+.services h2{
+    font-size: 42px;
+    text-align: center;
+}
+
+.questions h2{
+    font-size: 42px;
+    text-align: center;
+}
+
 .social-icons img {
     width: 50px; /* Increase the width for larger icons */
     height: auto; /* Maintain aspect ratio */
@@ -458,11 +468,6 @@ button[type="submit"]:hover {
     color: white;
 }
 
-.questions h2 {
-    text-align: center;
-    font-size: 24px;
-}
-
 .question {
     cursor: pointer;
     display: flex;
@@ -569,4 +574,102 @@ button[type="submit"]:hover {
 
 div.leaflet-control-attribution.leaflet-control {
     display: none !important;
+}
+
+.career{
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: white;
+}
+.career h1{
+    text-align: center;
+    font-size: 52px;
+}
+
+.career h2{
+    text-align: center;
+    font-size: 42px;
+}
+
+.career h3{
+    font-size: 28px;
+}
+
+.about{     
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: white;}
+
+.about h1{
+    text-align: center;
+    font-size: 52px;
+}
+
+.certificates {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.certificate {
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.certificate img {
+    max-width: 100%;
+}
+
+.certificate h3 {
+    color: white;
+    margin: 15px 0 10px;
+}
+
+.certificate p {
+    color: #ccc;
+    margin: 5px 0;
+}
+
+
+
+.image-container {
+    position: relative;
+    width: 300px; /* Nastavte šírku obrázka podľa potreby */
+}
+
+.image-container img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none; /* Skryté pred kliknutím */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden; /* Skrytie pretečeného obsahu */
+    opacity: 0; /* Skrytý overlay s nulovou opacitou */
+    transition: opacity 0.5s ease; /* Prechodová animácia pre overlay */
+}
+
+.overlay.show {
+    display: flex; /* Zobrazenie overlay */
+    opacity: 1; /* Opacita 1 po zobrazení */
+}
+
+.overlay img {
+    transform: scale(2); /* Zväčšenie na 20-krát */
+    transition: transform 0.5s ease; /* Jemný prechod pri zväčšení */
+    max-width: none; /* Odstránenie maximálnych šírok pre zväčšenie */
+    max-height: none; /* Odstránenie maximálnych výšok pre zväčšenie */
 }

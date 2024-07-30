@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css">
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="lic.js"></script>
 
     <style>
         .leaflet-popup-content-wrapper {
@@ -52,32 +53,41 @@
     </header>
 
 
-    <section class="career">
-        <h1>Kariéra</h1>
-        <h2>Máš záujem o jednu z naších pozícií ?</h2>
-        <h3>Momentálne voľné pozície:</h3>
+    <section class="about">
+        <h1>O nás</h1>
+        <p>
+            Spoločnosť ALBASEC s. r. o. je firma, ktorá v rámci svojej podnikateľskej činnosti zabezpečuje ochranu majetku a osôb, informátorských a strážnych služieb.
+            Albasec je držiteľom licencie na prevádzkovanie strážnej služby pričom spoločnosť disponuje základňou zamestnancov s dlhoročnou praxou a skúsenosťami odpovedajúcimi pracovnému zaradeniu strážnik aj informátor.
+            Spoločnosť ALBASEC s. r. o čerpá svoje skúsenosti z dlhoročnej činnosti ochrany majetku a osôb. Našim cieľom je stať sa popredným a komplexných partnerom nielen v Bratislavskom kraji ale na celom území Slovenska a blízkom okolí.
+        </p>
+        <h1>Naše licencie a certifikáty</h1>
+        <div class="certificates">
+            <div class="certificate">
+                <div class="image-container">
+                    <img class="zoom-image" src="img/lic/lic2021.jpg" alt="Fullscreen Obrázok">
+                </div>
+                <h3>Licencia strážnej služby PS: 001583</h3>
+                <p>platnosť do: 12.6.2031</p>
+                <p>Držiteľ licencie je oprávnený vykonávať činnosť strážnej služby v zmysle zákona o poskytovaní služieb v oblasti SBS a o zmene a doplnení niektorých zákonov (zákon o súkromnej bezpečnosti).</p>
+            </div>
+            <div class="certificate">
+                <div class="image-container">
+                    <img class="zoom-image" src="img/lic/ISO9001.jpg" alt="Certifikát EN ISO 9001:2015">
+                </div>
+                <h3>Certifikát EN ISO 9001:2015</h3>
+                <p>platnosť do: 10.10.2024</p>
+                <p>Držiteľ certifikátu v oblasti poskytovania SBS služieb v zmysle ISO 9001:2015 vydané eucert, s.r.o. dňa 11.10.2021.</p>
+            </div>
+        </div>
 
-        <h3>Bezpečnostný pracovník</h3>
-        <p>Zamestnanec musí spĺňať kritériá zákona č. 473/2005 Z.z. o súkromnej bezpečnosti, predovšetkým však musí byť:</p>
-            <ul>
-                <li>bezúhonný</li>
-                <li>spoľahlivý</li>
-                <li>odborne a zdravotne spôsobilý</li>
-                <li>rozhodné, ale slušné a kultivované vystupovanie</li>
-                <li>zbrojný preukaz je výhodou</li>
-                <li>preferujeme vyšportovanú postavu</li>
-            </ul>
-
-        <h3>Čo môžeš očakávať:</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-        <h3>Zamestnanecké výhody:</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <!-- Overlay sa bude používať pre všetky obrázky -->
+        <div id="fullscreenOverlay" class="overlay">
+            <img id="fullscreenImage" src="" alt="Fullscreen Obrázok">
+        </div>
 
     </section>
 
-
-    <section class="contact-us">
+   <section class="contact-us">
         <div class="contact-info">
             <h2>Kontakt</h2>
             <h3>Telefónne číslo: +421 910 262 515</h3>

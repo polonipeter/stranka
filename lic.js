@@ -13,4 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
     overlay.addEventListener('click', function() {
         overlay.classList.remove('show');
     });
+    
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            overlay.classList.remove('show');
+        }
+    });
 });

@@ -1,7 +1,7 @@
 function handleBoxClick(buttonId) {
     const button = document.getElementById(buttonId);
     if (button) {
-        button.click(); // Simuluje kliknutie na tlačidlo
+        button.click(); // Simulate a button click
     }
 }
 
@@ -9,10 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const requestButton = document.getElementById('requestButton');
     localStorage.removeItem('nameData');
     localStorage.removeItem('emailData');
+    localStorage.removeItem('phoneData');
     localStorage.removeItem('messageData');
+
     async function loadFormHtml() {
         const name = JSON.parse(localStorage.getItem('nameData'));
         const email = JSON.parse(localStorage.getItem('emailData'));
+        const phone = JSON.parse(localStorage.getItem('phoneData'));
         const message = JSON.parse(localStorage.getItem('messageData'));
         return `
             <div class="popup-form">
@@ -28,6 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" value="${email || ''}"  required>
                         <!-- Added autocomplete="email" for email field -->
+                    </div>
+                    <div class="form-group">
+                    <label for="phone">Telefónne číslo:</label>
+                    <input type="phone" id="phone" name="phone" value="${phone || ''}" >
                     </div>
                     <div class="form-group">
                         <label for="message">Správa:</label>
@@ -50,12 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (input.name === 'name') {
                 name = input.value;
                 localStorage.setItem('nameData', JSON.stringify(name));
-                ;}
-            else if (input.name === 'email') {
+            } else if (input.name === 'email') {
                 email = input.value;
                 localStorage.setItem('emailData', JSON.stringify(email));
-            }
-            else if (input.name === 'message') {
+            } else if (input.name === 'phone') {
+                email = input.value;
+                localStorage.setItem('phoneData', JSON.stringify(email));
+            } else if (input.name === 'message') {
                 message = input.value;
                 localStorage.setItem('messageData', JSON.stringify(message));
             }
@@ -80,9 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const successMessage = formContainer.querySelector('.success-message');
             const cancelButton = formContainer.querySelector('.cancel-button');
 
-            cancelButton.addEventListener('click', () => {
+            function closePopup() {
                 document.body.removeChild(backdrop);
                 document.body.removeChild(formContainer);
+            }
+
+            cancelButton.addEventListener('click', closePopup);
+
+            backdrop.addEventListener('click', closePopup);
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closePopup();
+                }
             });
 
             form.addEventListener('submit', async (event) => {
@@ -98,9 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         successMessage.style.display = 'block';
                         localStorage.removeItem('nameData');
                         localStorage.removeItem('emailData');
+                        localStorage.removeItem('phoneData');
                         localStorage.removeItem('messageData');
                         form.reset();
-                        
                     } else {
                         throw new Error('Formulár sa nepodarilo odoslať.');
                     }
@@ -127,17 +145,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000); // Simulate 2 seconds delay
         });
     }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
     function getFormHtml(title) {
         const name = JSON.parse(localStorage.getItem('nameData')) || '';
         const email = JSON.parse(localStorage.getItem('emailData')) || '';
+        const phone = JSON.parse(localStorage.getItem('phoneData')) || '';
         const message = JSON.parse(localStorage.getItem('messageData')) || '';
         const form =  
         `<button class="cancel-button">×</button>
         <form id="dynamicForm" action="#">
-            <h2>${title}</h2>
             <div class="form-group">
                 <label for="name">Meno:</label>
                 <input type="text" id="name" name="name" value="${name}" required>
@@ -147,54 +163,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 <input type="email" id="email" name="email" value="${email}" required>
             </div>
             <div class="form-group">
+                <label for="phone">Telefónne číslo:</label>
+                <input type="phone" id="phone" name="phone" value="${phone}" >
+            </div>
+            <div class="form-group">
                 <label for="message">Správa:</label>
                 <textarea id="message" name="message" rows="5" required>${message}</textarea>
             </div>
-            <button type="submit">Odoslať</button>
+            <button type="submit">Objednať</button>
         </form>
-        <div class="success-message"></div>`
-        
+        <div class="success-message"></div>`;
+
         if (title === 'Elektronická ochrana') {
-            return `<div class="popup-form"> 
+            return `<div class="popup-form"> <h2>${title}</h2>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
             when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
             It has survived not only five centuries, but also the leap into electronic typesetting, 
             remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
             Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
-            +`<img src="img/security.png" alt="Informátor">`
-            +form+`</div>`;
+            + `<img src="img/security.png" alt="Informátor">`
+            + form + `</div>`;
         } else if (title === 'Fyzická ochrana osôb - bodyguard') {
-            return `<div class="popup-form"> 
+            return `<div class="popup-form"> <h2>${title}</h2>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
             when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
             It has survived not only five centuries, but also the leap into electronic typesetting, 
             remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
             Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
-            +`<img src="img/security.png" alt="Informátor">`
-            +form+`</div>`;
+            + `<img src="img/security.png" alt="Informátor">`
+            + form + `</div>`;
         } else if (title === 'Fyzická ochrana v priestoroch zákazníka') {
-            return `<div class="popup-form"> 
+            return `<div class="popup-form"> <h2>${title}</h2>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
             when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
             It has survived not only five centuries, but also the leap into electronic typesetting, 
             remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
             Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
-            +`<img src="img/security.png" alt="Informátor">`
-            +form+`</div>`;
+            + `<img src="img/security.png" alt="Informátor">`
+            + form + `</div>`;
         } else if (title === 'Hliadka pešej obchôdzky objektu') {
-            return `<div class="popup-form"> 
+            return `<div class="popup-form"> <h2>${title}</h2>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
             when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
             It has survived not only five centuries, but also the leap into electronic typesetting, 
             remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
             Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
-            +`<img src="img/security.png" alt="Informátor">`
-            +form+`</div>`;
-        } 
+            + `<img src="img/security.png" alt="Informátor">`
+            + form + `</div>`;
+        }
     }
 
     function saveFormData() {
@@ -203,6 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('nameData', JSON.stringify(input.value));
             } else if (input.name === 'email') {
                 localStorage.setItem('emailData', JSON.stringify(input.value));
+            } else if (input.name === 'phone') {
+                localStorage.setItem('phoneData', JSON.stringify(input.value));
             } else if (input.name === 'message') {
                 localStorage.setItem('messageData', JSON.stringify(input.value));
             }
@@ -213,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const requestButton = document.getElementById(buttonId);
         localStorage.removeItem('nameData');
         localStorage.removeItem('emailData');
+        localStorage.removeItem('phoneData');
         localStorage.removeItem('messageData');
         
         requestButton.addEventListener('click', async () => {
@@ -233,9 +256,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const successMessage = formContainer.querySelector('.success-message');
                 const cancelButton = formContainer.querySelector('.cancel-button');
 
-                cancelButton.addEventListener('click', () => {
+                function closePopup() {
                     document.body.removeChild(backdrop);
                     document.body.removeChild(formContainer);
+                }
+
+                cancelButton.addEventListener('click', closePopup);
+
+                backdrop.addEventListener('click', closePopup);
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape') {
+                        closePopup();
+                    }
                 });
 
                 form.addEventListener('submit', async (event) => {
@@ -251,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             successMessage.style.display = 'block';
                             localStorage.removeItem('nameData');
                             localStorage.removeItem('emailData');
+                            localStorage.removeItem('phoneData');
                             localStorage.removeItem('messageData');
                             form.reset();
                         } else {

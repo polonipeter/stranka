@@ -412,7 +412,7 @@ button[type="submit"]:hover {
 
 /* Submit button */
 .popup-form button[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #578cee;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -424,7 +424,7 @@ button[type="submit"]:hover {
 }
 
 .popup-form button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #1938ec;
     transform: translateY(-2px);
 }
 

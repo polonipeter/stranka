@@ -15,7 +15,7 @@ header {
     z-index: 1000;
 }
 .header-container {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.9); /* Čierna farba s 50% priehľadnosťou */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,10 +30,23 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
 }
-    
+
+.logo {
+    display: flex; /* Použitie flexboxu na umiestnenie elementov vedľa seba */
+    align-items: center; /* Vertikálne zarovnanie elementov na stred */
+}
 
 .logo img {
-    width: 200px;
+    margin-right: 10px; /* Priestor medzi obrázkom a textom */
+}
+
+.logo h2 {
+    margin: 0; /* Odstránenie predvoleného okraja h2 */
+}
+
+.logo img {
+    width: 40px;
+    padding-left: 10px;
 }
 
 nav ul {
@@ -220,36 +233,64 @@ p {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    display: grid; /* Použitie Grid Layout na usporiadanie stĺpcov */
+    grid-template-columns: 0.5fr 1.5fr 1fr; /* Tri stĺpce s rôznymi šírkami */
+    gap: 20px; /* Medzera medzi stĺpcami */
     padding: 50px 20px;
-    text-align: center;
+    box-sizing: border-box; /* Zabezpečuje, že padding je zahrnutý v celkovej šírke kontajnera */
+    color: white;
+}
+
+.contact-us h2 {
+    margin-top: 0; /* Odstránenie predvoleného okraja nadpisu */
+    margin-bottom: 10px; /* Priestor pod nadpisom */
+    font-size: 40px;
+}
+
+.contact-logo {
+    display: flex; /* Umožňuje obrázku byť flexibilne umiestnený */
+    align-items: center; /* Vertikálne zarovná obrázok na stred */
+    justify-content: center; /* Horizontálne zarovná obrázok na stred */
+}
+
+.contact-logo img {
+    width: 100%; /* Umožňuje obrázku prispôsobiť sa šírke stĺpca */
+    max-width: 150px; /* Nastavte maximálnu šírku obrázku */
+    height: auto; /* Udrží proporcie obrázku */
+}
+
+.contact-logo-content {
+    max-width: 100%; /* Umožňuje textovému bloku prispôsobiť sa šírke stĺpca */
+    padding-right: 40%;
+}
+
+.contact-logo-content h2 {
+    margin-top: 0; /* Odstránenie predvoleného okraja nadpisu */
+    margin-bottom: 10px; /* Priestor pod nadpisom */
+}
+
+.contact-logo-content p {
+    margin: 0; /* Odstránenie predvoleného okraja odstavca */
 }
 
 .contact-info {
-    flex: 1;
-    text-align: left;
-    color: white; /* Set text color to white */
+    max-width: 100%; /* Umožňuje bloku s kontaktnými informáciami prispôsobiť sa šírke stĺpca */
 }
 
-.contact-info h2 {
-    margin-bottom: 10px;
-    font-size: 40px;
-    padding-bottom: 30px;
-}
-
-.contact-info h3{
+.contact-info h3 {
     font-size: 30px;
-    padding-bottom: 20px;
+    margin: 5px 0; /* Priestor nad a pod podnadpisom */
 }
 
 .contact-info p {
-    color: white; /* Adjust paragraph text color if needed */
+    margin: 5px 0; /* Priestor nad a pod odstavcom */
     font-size: 1.2em;
 }
 
 
+
+
+/* Zmazat? */
 .contact-form {
     flex: 1;
     text-align: left;
@@ -290,22 +331,9 @@ p {
 .form-group textarea {
     resize: none; 
 }
+/* Zmazat? */
 
 
-button[type="submit"] {
-    background-color: transparent;
-    border: transparent; /* Blue border */
-    padding: 10px 20px;
-    color: white; /* Blue text color */
-    cursor: pointer;
-    transition: all 0.3s ease; /* Smooth transition */
-}
-
-button[type="submit"]:hover {
-    background-color: black; /* Black background on hover */
-    color: #fff; /* White text color on hover */
-    border: 1px solid black; /* Add border on hover */
-}
 
 /* Success message */
 .success-message {
@@ -416,20 +444,22 @@ button[type="submit"]:hover {
 
 /* Submit button */
 .popup-form button[type="submit"] {
-    background-color: #578cee;
+    background-color: transparent;
+    font-weight: bold;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
     width: 60%;
+    border:2px solid white;
+    transition: all 0.3s ease; /* Hladký prechod */
 }
 
 .popup-form button[type="submit"]:hover {
-    background-color: #1938ec;
-    transform: translateY(-2px);
+    box-shadow: 0 0 20px white; /* Sivý a dlhší tieňový efekt pri prechode myšou */
+    transform: scale(1.05); /* Efekt zväčšenia pri prechode myšou */
 }
 
 /* Cancel button */
@@ -438,7 +468,7 @@ button[type="submit"]:hover {
     top: 10px;
     right: 10px;
     font-size: 1.5rem;
-    color: #888;
+    color: white;
     background: none;
     border: none;
     cursor: pointer;
@@ -446,7 +476,7 @@ button[type="submit"]:hover {
 }
 
 .cancel-button:hover {
-    color: #333;
+    transform: translateY(-2px)
 }
 
 /* Fade-in animation */
@@ -524,6 +554,11 @@ button[type="submit"]:hover {
     transform: rotate(180deg);
 }
 
+.clients h2{
+    color: white;
+    font-size: 42px;
+    text-align: center;
+}
 
 .clients p {
     text-align: center;
@@ -665,19 +700,15 @@ div.leaflet-control-attribution.leaflet-control {
 }
 
 .overlay img {
-    transform: scale(2); /* Zväčšenie na 20-krát */
+    transform: scale(1); /* Zväčšenie na 20-krát */
     transition: transform 0.5s ease; /* Jemný prechod pri zväčšení */
     max-width: none; /* Odstránenie maximálnych šírok pre zväčšenie */
-    max-height: none; /* Odstránenie maximálnych výšok pre zväčšenie */
+    max-height: 90%; /* Odstránenie maximálnych výšok pre zväčšenie */
 }
-
 
 @media (max-width: 600px) {
     p{color: black;}
 }
-
-
-
 
 .career{
     padding: 10px;

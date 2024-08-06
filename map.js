@@ -20,33 +20,42 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
 }).addTo(map);
 
+// Define custom icons
+var AlbasecIcon = L.icon({
+    iconUrl: 'img/logo/Albasec-logo2.png',
+    iconSize: [22, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+});
+
 // Define the boundaries of Bratislava
 var southWest = L.latLng(48.1, 17.0),
     northEast = L.latLng(48.2, 17.2),
     bounds = L.latLngBounds(southWest, northEast);
 
-// Generate random markers within Bratislava
-var markers = [];
-var numberOfMarkers = 20;
-
-for (var i = 0; i < numberOfMarkers; i++) {
-    var lat = getRandomNumber(southWest.lat, northEast.lat);
-    var lng = getRandomNumber(southWest.lng, northEast.lng);
-    var companyName = 'Company Bratislava' + (i + 1);
-    var marker = L.marker([lat, lng]).addTo(map).bindPopup(companyName);
-    markers.push(marker);
-    marker.on('mouseover', function(e) {
-        this.openPopup();
-    });
-    marker.on('mouseout', function(e) {
-        this.closePopup();
-    });
-}
-
 // Function to get random number within a range
 function getRandomNumber(min, max) {
     return Math.random() * (max - min) + min;
 }
+
+// Function to add markers with custom icons
+function addMarkers(bounds, numberOfMarkers, icon, prefix) {
+    for (var i = 0; i < numberOfMarkers; i++) {
+        var lat = getRandomNumber(bounds.getSouthWest().lat, bounds.getNorthEast().lat);
+        var lng = getRandomNumber(bounds.getSouthWest().lng, bounds.getNorthEast().lng);
+        var companyName = prefix + (i + 1);
+        var marker = L.marker([lat, lng], { icon: icon }).addTo(map).bindPopup(companyName);
+        marker.on('mouseover', function (e) {
+            this.openPopup();
+        });
+        marker.on('mouseout', function (e) {
+            this.closePopup();
+        });
+    }
+}
+
+var bratislavaBounds = L.latLngBounds(L.latLng(48.1, 17.0), L.latLng(48.2, 17.2));
+addMarkers(bratislavaBounds, 20, AlbasecIcon, 'Company Bratislava');
 
 // Define the boundaries of Trnava
 var trnavaSouthWest = L.latLng(48.3, 17.5),

@@ -142,6 +142,7 @@ p {
 }
 
 .service-button {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -353,6 +354,12 @@ button[type="submit"]:hover {
     max-width: 100%;
     margin: 0 auto;
     text-align: center;
+}
+
+.popup-form img{
+    width: 400px; /* Ensure the image fits within the box */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the image */
 }
 
 /* Popup form heading */
@@ -576,26 +583,6 @@ div.leaflet-control-attribution.leaflet-control {
     display: none !important;
 }
 
-.career{
-    padding: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
-    color: white;
-}
-.career h1{
-    text-align: center;
-    font-size: 52px;
-}
-
-.career h2{
-    text-align: center;
-    font-size: 42px;
-}
-
-.career h3{
-    font-size: 28px;
-}
-
 .about{     
     padding: 10px;
     padding-left: 100px;
@@ -683,4 +670,58 @@ div.leaflet-control-attribution.leaflet-control {
 
 @media (max-width: 600px) {
     p{color: black;}
+}
+
+
+
+
+.career{
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: white;
+}
+.career h1{
+    text-align: center;
+    font-size: 52px;
+}
+
+.career h2{
+    text-align: center;
+    font-size: 42px;
+}
+
+.career h3{
+    text-align: center;
+    font-size: 28px;
+}
+
+.job-boxes {
+    display: flex;
+    justify-content: space-between; /* Ensures there's space between the two halves */
+    padding: 20px; /* Padding from the edges of the screen */
+    gap: 60px; /* Space between the two boxes */
+    max-width: 1200px; /* Optional: Limit max width for better aesthetics on large screens */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+.job-box {
+    flex: 1; /* Makes each box take up equal width */
+    padding: 20px; /* Padding inside each job box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for separation */
+    border-radius: 8px; /* Optional: Rounded corners */
+    border: 2px solid #fff; /* Biele ohraničenie */
+    border-radius: 5px; /* Zaoblené rohy */
+    transition: all 0.3s ease; /* Hladký prechod */
+    cursor: pointer;
+}
+
+.job-box:hover {
+    box-shadow: 0 0 20px white; /* Sivý a dlhší tieňový efekt pri prechode myšou */
+}
+
+.job-box img {
+    max-width: 100%; /* Ensure the image fits within the box */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the image */
 }

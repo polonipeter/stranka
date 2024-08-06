@@ -38,13 +38,12 @@
                 <ul>
                     <li><a href="index.html">Domov</a></li>
                     <li><a href="about.html">O nás</a></li>
-                    <li><a href="kariera.html">Kariéra</a></li>
+                    <li><a href="career.html">Kariéra</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
             </nav>
             <div class="social-icons">
                 <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="img/X.png" alt="X"></a>
                 <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
             </div>
         </div>
@@ -68,33 +67,32 @@
                 dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <div class="service-buttons">
-                <div class="service-button">
+                <div class="service-button" onclick="handleBoxClick('cameraButton')">
                     <img src="img/camera.png" alt="Camera Icon">
                     <span class="button-text">Elektronická ochrana</span>
                     <span class="button-subtext">Zamedzovanie nedovoleného vstupu</span>
                 </div>
-                <div class="service-button">
+                <div class="service-button" onclick="handleBoxClick('bodyguardButton')">
                     <img src="img/serviceIcon2.png" alt="Icon 2">
                     <span class="button-text">Fyzická ochrana osôb - bodyguard</span>
                     <span class="button-subtext">Ochrana zdravia, rodiny a toho najdôležitejšieho</span>
                 </div>
-                <div class="service-button">
+                <div class="service-button" onclick="handleBoxClick('houseButton')">
                     <img src="img/house.png" alt="Icon 3">
                     <span class="button-text">Fyzická ochrana v priestoroch zákazníka</span>
                     <span class="button-subtext">Poskytujeme uniformovanú strážnu službu.</span>
                 </div>
-                <div class="service-button">
-                    <img src="img/car.png" alt="Icon 4">
-                    <span class="button-text">Prevoz cenín</span>
-                    <span class="button-subtext">Bezpečný prevoz veľkých obnosov</span>
-                </div>
-                <div class="service-button">
+                <div class="service-button" onclick="handleBoxClick('walkButton')">
                     <img src="img/dog.png" alt="Icon 5">
                     <span class="button-text">Hliadka pešej obchôdzky objektu</span>
                     <span class="button-subtext">Kontrola neporušenosti plášťa budovy</span>
                 </div>
             </div>
             <div id="service-content"></div>
+            <button id="cameraButton" style="display:none;">Elektronická ochrana</button>
+            <button id="bodyguardButton" style="display:none;">Fyzická ochrana osôb - bodyguard</button>
+            <button id="houseButton" style="display:none;">Fyzická ochrana v priestoroch zákazníka</button>
+            <button id="walkButton" style="display:none;">Hliadka pešej obchôdzky objektu</button>
         </section>
         <section class="stats">
             <div>
@@ -224,7 +222,7 @@
         </section>
 
         <section class="copyright">
-            <p>Copyright (C) 2021-2022 by ADMIN pre ALBASEC, s.r.o.</p>
+            <p>Copyright (C) 2024-2025 by ADMIN pre ALBASEC, s.r.o.</p>
         </section>
 
     </main>

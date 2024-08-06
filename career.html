@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css">
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="career.js"></script>
 
     <style>
         .leaflet-popup-content-wrapper {
@@ -38,13 +39,12 @@
                 <ul>
                     <li><a href="index.html">Domov</a></li>
                     <li><a href="about.html">O nás</a></li>
-                    <li><a href="kariera.html">Kariéra</a></li>
+                    <li><a href="career.html">Kariéra</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
             </nav>
             <div class="social-icons">
                 <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="img/X.png" alt="X"></a>
                 <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
             </div>
         </div>
@@ -55,27 +55,35 @@
     <section class="career">
         <h1>Kariéra</h1>
         <h2>Máš záujem o jednu z naších pozícií ?</h2>
-        <h3>Momentálne voľné pozície:</h3>
 
-        <h3>Bezpečnostný pracovník</h3>
-        <p>Zamestnanec musí spĺňať kritériá zákona č. 473/2005 Z.z. o súkromnej bezpečnosti, predovšetkým však musí byť:</p>
-            <ul>
-                <li>bezúhonný</li>
-                <li>spoľahlivý</li>
-                <li>odborne a zdravotne spôsobilý</li>
-                <li>rozhodné, ale slušné a kultivované vystupovanie</li>
-                <li>zbrojný preukaz je výhodou</li>
-                <li>preferujeme vyšportovanú postavu</li>
-            </ul>
-
-        <h3>Čo môžeš očakávať:</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-        <h3>Zamestnanecké výhody:</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+        <div class="job-boxes">
+            <div class="job-box" onclick="handleBoxClick('informatorButton')">
+                <h3>Informátor</h3>
+                <img src="img/security.png" alt="Informátor">
+                <h3>Čo môžeš očakávať:</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            
+            <div class="job-box" onclick="handleBoxClick('securityButton')">
+                <h3>Bezpečnostný pracovník</h3>
+                <img src="img/security.png" alt="Bezpečnostný pracovník">
+                <h3>Požiadavky na zamenstnaca:</h3>
+                <p>Zamestnanec musí spĺňať kritériá zákona č. 473/2005 Z.z. o súkromnej bezpečnosti, predovšetkým však musí byť:</p>
+                <ul>
+                    <li>bezúhonný</li>
+                    <li>spoľahlivý</li>
+                    <li>odborne a zdravotne spôsobilý</li>
+                    <li>rozhodné, ale slušné a kultivované vystupovanie</li>
+                    <li>zbrojný preukaz je výhodou</li>
+                    <li>preferujeme vyšportovanú postavu</li>
+                </ul>
+                <h3>Čo môžeš očakávať:</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
     </section>
-
+    <button id="informatorButton" style="display:none;">Informátor Button</button>
+    <button id="securityButton" style="display:none;">Bezpečnostný Button</button>
 
     <section class="contact-us">
         <div class="contact-info" id="contact">
@@ -110,7 +118,7 @@
     </section>
 
     <section class="copyright">
-        <p>Copyright (C) 2021-2022 by ADMIN pre ALBASEC, s.r.o.</p>
+        <p>Copyright (C) 2024-2025 by ADMIN pre ALBASEC, s.r.o.</p>
     </section>
 
 </body>

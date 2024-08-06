@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="sk">
-<!-- musime upravit styl pop-up formularov -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,28 @@
         }
         .leaflet-popup-close-button {
             display: none; /* Hide the close button */
+        }
+
+        .benefits-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .benefits-section h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .benefits-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .benefits-section img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 5px;
         }
         
     </style>
@@ -51,7 +73,6 @@
         
     </header>
 
-
     <section class="career">
         <h1>Kariéra</h1>
         <h2>Máš záujem o jednu z naších pozícií ?</h2>
@@ -78,12 +99,18 @@
                     <li>preferujeme vyšportovanú postavu</li>
                 </ul>
                 <h3>Čo môžeš očakávať:</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <ul>
+                    <li>Preplácané tréningy K1 alebo boxu pod vedením Tomáša Szépa.</li>
+                    <li>Plat</li>
+                    <li>Dovolenka</li>
+                </ul>
             </div>
         </div>
+        
     </section>
     <button id="informatorButton" style="display:none;">Informátor Button</button>
     <button id="securityButton" style="display:none;">Bezpečnostný Button</button>
+
 
     <section class="contact-us">
         <div class="contact-info" id="contact">

@@ -1,7 +1,7 @@
 function handleBoxClick(buttonId) {
     const button = document.getElementById(buttonId);
     if (button) {
-        button.click(); // Simuluje kliknutie na tlačidlo
+        button.click(); // Simulates a button click
     }
 }
 
@@ -47,6 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function closeForm() {
+        const backdrop = document.querySelector('.popup-backdrop');
+        const formContainer = document.querySelector('.popup-form-container');
+
+        if (backdrop && formContainer) {
+            document.body.removeChild(backdrop);
+            document.body.removeChild(formContainer);
+        }
+    }
+
     function handleButtonClick(buttonId, formTitle) {
         const requestButton = document.getElementById(buttonId);
         localStorage.removeItem('nameData');
@@ -71,9 +81,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 const successMessage = formContainer.querySelector('.success-message');
                 const cancelButton = formContainer.querySelector('.cancel-button');
 
+                const closeFormOnClickOutside = (event) => {
+                    if (event.target === backdrop) {
+                        closeForm();
+                    }
+                };
+
+                const closeFormOnEscape = (event) => {
+                    if (event.key === 'Escape') {
+                        closeForm();
+                    }
+                };
+
+                backdrop.addEventListener('click', closeFormOnClickOutside);
+                document.addEventListener('keydown', closeFormOnEscape);
+
                 cancelButton.addEventListener('click', () => {
-                    document.body.removeChild(backdrop);
-                    document.body.removeChild(formContainer);
+                    closeForm();
                 });
 
                 form.addEventListener('submit', async (event) => {

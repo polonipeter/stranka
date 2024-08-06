@@ -118,8 +118,8 @@ p {
 }
 
 .hero p {
-    font-size: 1.2em; /* Example: Increase font size for readability */
-    max-width: 300px; /* Maximálna šírka pre element <p> */
+    font-size: 1.01em; /* Example: Increase font size for readability */
+    max-width: 600px; /* Maximálna šírka pre element <p> */
     padding-left: 16%;
 }
 
@@ -265,7 +265,6 @@ p {
 
 .contact-form form {
     max-width: 400px;
-    margin: 0 auto;
 }
 
 .form-group {
@@ -328,7 +327,6 @@ button[type="submit"]:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
 
@@ -338,15 +336,23 @@ button[type="submit"]:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    padding: 40px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background-color: #1a1a1a; /* Pridajte nepriehľadnú farbu pozadia */
+    background-image: url('img/miniBlue.png');
+    background-position: center; /* Vycentruje obrázok na pozadí */
+    background-size: cover; /* Zabezpečí, že obrázok pokrýva celý kontajner */
+    background-repeat: no-repeat; /* Zabezpečí, že obrázok sa nezopakuje */
     border-radius: 8px;
     z-index: 1001;
-    width: 90%;
-    max-width: 500px;
+    max-height: 90%;
+    min-width: 30%;
+    max-width: 60%;
     animation: fadeIn 0.3s ease-in-out;
+    color: white;
+    border: 2px solid white;
+    overflow-y: auto; /* Povolenie vertikálneho rolovania, ak je obsah väčší ako max-height */
+    padding-left: 40px;
+    padding-right: 50px;
+    padding-bottom: 15px;
 }
 
 /* Popup form */
@@ -359,29 +365,28 @@ button[type="submit"]:hover {
 .popup-form img{
     width: 400px; /* Ensure the image fits within the box */
     height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px; /* Space below the image */
+    margin-bottom: 10px; /* Space below the image */
 }
 
 /* Popup form heading */
 .popup-form h2 {
-    margin-bottom: 20px;
+    color: white;
     font-size: 1.75rem;
-    color: #333;
     font-weight: bold;
 }
 
 /* Form group */
 .popup-form .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
 }
 
 /* Form group label */
 .popup-form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: bold;
-    color: #666;
+    color: white;
     font-size: 1rem;
 }
 
@@ -390,7 +395,6 @@ button[type="submit"]:hover {
 .popup-form input[type="email"],
 .popup-form textarea {
     width: 100%;
-    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
@@ -401,7 +405,7 @@ button[type="submit"]:hover {
 .popup-form input[type="text"]:focus,
 .popup-form input[type="email"]:focus,
 .popup-form textarea:focus {
-    border-color: #4CAF50;
+    border-color: black;
     outline: none;
 }
 
@@ -420,7 +424,7 @@ button[type="submit"]:hover {
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 100%;
+    width: 60%;
 }
 
 .popup-form button[type="submit"]:hover {
@@ -725,3 +729,5 @@ div.leaflet-control-attribution.leaflet-control {
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px; /* Space below the image */
 }
+
+

@@ -287,9 +287,6 @@ p {
     font-size: 1.2em;
 }
 
-
-
-
 /* Zmazat? */
 .contact-form {
     flex: 1;
@@ -626,7 +623,8 @@ div.leaflet-control-attribution.leaflet-control {
     padding: 10px;
     padding-left: 100px;
     padding-right: 100px;
-    color: white;}
+    color: white;
+}
 
 .about h1{
     text-align: center;
@@ -659,7 +657,6 @@ div.leaflet-control-attribution.leaflet-control {
     color: #ccc;
     margin: 5px 0;
 }
-
 
 
 .image-container {
@@ -762,3 +759,263 @@ div.leaflet-control-attribution.leaflet-control {
 }
 
 
+/* Štýly pre hamburger menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-menu span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Skrytie navigácie a zobrazenie hamburger menu na menších obrazovkách */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        text-align: center;
+        z-index: 1001;
+        /* Skrytie navigácie za obrazovkou */
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav.active {
+        display: block;
+        transform: translateX(0);
+    }
+
+    nav ul {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    p {
+        font-weight: bold; /* Tučné písmo */
+        color: white;
+    }
+
+    .service-buttons {
+        display: flex;
+        flex-direction: column; /* Umiestnenie tlačidiel do stĺpca */
+        align-items: center; /* Zarovná tlačidlá do stredu */
+        gap: 20px; /* Rozostupy medzi tlačidlami */
+    }
+
+    .service-button {
+        width: 160px; /* Pôvodná šírka */
+        height: 160px; /* Pôvodná výška */
+        padding: 30px; /* Pôvodné oplátky */
+        margin: 10px 0; /* Vertikálne medzery medzi tlačidlami */
+    }
+
+    .stats {
+        flex-direction: column; /* Umiestnenie prvkov do stĺpca */
+        align-items: center; /* Zarovnanie do stredu */
+        padding: 20px; /* Zabezpečenie, že obsah má primeraný padding */
+    }
+
+    .stats div {
+        max-width: 100%; /* Umožnenie plnej šírky pre bloky */
+        padding: 10px; /* Zmenšenie paddingu pre mobilné zariadenia */
+    }
+
+    .stats img {
+        width: 80px; /* Menšia veľkosť obrázkov pre mobilné zariadenia */
+    }
+
+    .stats h3 {
+        font-size: 1.8em; /* Menšia veľkosť textu pre mobilné zariadenia */
+    }
+
+    .stats p {
+        font-size: 1.8em; /* Menšia veľkosť textu pre mobilné zariadenia */
+    }
+
+    .questions {
+        padding: 10px;
+        color: white;
+    }
+
+    .question:hover {
+        background-color: rgba(0, 0, 0, 0.2); /* Tmavšie pozadie pri hover */
+    }
+
+    #map {
+        max-width: 1200px;
+        width: 100%;
+        height: 300px; /* Adjust map height */
+        margin-top: 20px; /* Add margin on top */
+        margin: 20px auto;
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    }
+
+    .contact-us {
+        background-image: url('img/security.png'); /* Nahradiť cestu k obrázku podľa potreby */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex; /* Použiť Flexbox na usporiadanie obsahu */
+        flex-direction: column; /* Umiestnenie detí vertikálne */
+        align-items: center; /* Horizontálne zarovnanie všetkých detí na stred */
+        padding: 50px 20px;
+        box-sizing: border-box; /* Zabezpečuje, že padding je zahrnutý v celkovej šírke kontajnera */
+        color: white;
+    }
+
+    /* Sekcia s logom */
+    .contact-logo {
+        display: flex; /* Flexbox na zarovnanie obrázku a textu */
+        align-items: center; /* Vertikálne zarovnanie obrázku na stred */
+        justify-content: center; /* Horizontálne zarovnanie obrázku na stred */
+        width: 100%; /* Šírka na celú šírku rodiča */
+    }
+
+    .contact-logo img {
+        width: 100%; /* Prispôsobenie šírky obrázku */
+        max-width: 150px; /* Maximálna šírka obrázku */
+        height: auto; /* Udrží proporcie obrázku */
+    }
+
+    .contact-logo-content {
+        text-align: center; /* Zarovnanie textu na stred */
+        padding: 20px; /* Padding okolo textového bloku */
+        width: 100%; /* Šírka na celú šírku rodiča */
+    }
+
+    .contact-logo-content h2 {
+        margin-top: 0; /* Odstránenie predvoleného okraja nadpisu */
+        margin-bottom: 10px; /* Priestor pod nadpisom */
+    }
+
+    .contact-logo-content p {
+        margin: 0; /* Odstránenie predvoleného okraja odstavca */
+    }
+
+    /* Sekcia s kontaktnými informáciami */
+    .contact-info {
+        width: 100%; /* Šírka na celú šírku rodiča */
+        text-align: center; /* Zarovnanie textu na stred */
+        padding: 20px; /* Padding okolo textového bloku */
+    }
+
+    .contact-info h3 {
+        font-size: 25px;
+        margin: 5px 0; /* Priestor nad a pod podnadpisom */
+    }
+
+    .contact-info p {
+        margin: 5px 0; /* Priestor nad a pod odstavcom */
+        font-size: 1.2em;
+    }
+
+    .popup-form-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #1a1a1a; /* Pridajte nepriehľadnú farbu pozadia */
+        background-image: url('img/miniBlue.png');
+        background-position: center; /* Vycentruje obrázok na pozadí */
+        background-size: cover; /* Zabezpečí, že obrázok pokrýva celý kontajner */
+        background-repeat: no-repeat; /* Zabezpečí, že obrázok sa nezopakuje */
+        border-radius: 8px;
+        z-index: 1001;
+        max-height: 90%;
+        width: 100%;
+        animation: fadeIn 0.3s ease-in-out;
+        color: white;
+        border: 2px solid white;
+        overflow-y: auto; /* Povolenie vertikálneho rolovania, ak je obsah väčší ako max-height */
+        padding-left: 40px;
+        padding-right: 50px;
+        padding-bottom: 15px;
+    }
+
+    .popup-form img{
+        width: 280px; /* Ensure the image fits within the box */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 10px; /* Space below the image */
+    }
+
+    .about{     
+        padding: 10px;
+        text-align: center;
+        color: white;
+
+    }
+
+    .about h1{
+        font-size: 42px;
+    }
+
+    .overlay img {
+        transform: scale(0.7); /* Zväčšenie na 20-krát */
+        transition: transform 0.5s ease; /* Jemný prechod pri zväčšení */
+        max-width: none; /* Odstránenie maximálnych šírok pre zväčšenie */
+        max-height: 90%; /* Odstránenie maximálnych výšok pre zväčšenie */
+    }
+
+    .career{
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: white;
+    }
+
+    .job-boxes {
+        display: flex;
+        flex-direction: column; /* Zoradenie boxov vertikálne */
+        align-items: center; /* Horizontálne centrovanie boxov */
+        justify-content: center; /* Vertikálne centrovanie boxov */
+        gap: 20px; /* Zmenšenie medzery medzi boxmi */
+        padding: 20px; /* Padding od okrajov obrazovky */
+    }
+
+    .job-box {
+        width: 90%; /* Zabezpečí, že boxy zaberajú celú šírku rodiča */
+        max-width: none; /* Zruší maximálnu šírku pre mobilné zariadenia */
+        margin: 0; /* Odstráni horizontálne marginy */
+    }
+
+}
+
+/* Animácia hamburger menu */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}

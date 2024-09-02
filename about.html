@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css">
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="lic.js"></script>
+    
 
     <style>
         .leaflet-popup-content-wrapper {
@@ -37,7 +38,13 @@
                 <img src="img/logo/Albasec-logo2.png" alt="ALBASEC">
                 <h2>ALBASEC SECURITY</h2>
             </div>
-            <nav>
+            <!-- Hamburger menu pre mobilné zariadenia -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="navMenu">
                 <ul>
                     <li><a href="index.html">Domov</a></li>
                     <li><a href="about.html">O nás</a></li>
@@ -50,7 +57,6 @@
                 <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
             </div>
         </div>
-        
     </header>
 
 
@@ -114,5 +120,6 @@
     </section>
 
 </body>
+<script src="phone.js"></script>
 
 </html>

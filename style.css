@@ -707,23 +707,24 @@ div.leaflet-control-attribution.leaflet-control {
     p{color: black;}
 }
 
-.career{
+.career {
     padding: 10px;
     padding-left: 100px;
     padding-right: 100px;
     color: white;
 }
-.career h1{
+
+.career h1 {
     text-align: center;
     font-size: 52px;
 }
 
-.career h2{
+.career h2 {
     text-align: center;
     font-size: 42px;
 }
 
-.career h3{
+.career h3 {
     text-align: center;
     font-size: 28px;
 }
@@ -741,7 +742,6 @@ div.leaflet-control-attribution.leaflet-control {
     flex: 1; /* Makes each box take up equal width */
     padding: 20px; /* Padding inside each job box */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for separation */
-    border-radius: 8px; /* Optional: Rounded corners */
     border: 2px solid #fff; /* Biele ohraničenie */
     border-radius: 5px; /* Zaoblené rohy */
     transition: all 0.3s ease; /* Hladký prechod */
@@ -749,13 +749,27 @@ div.leaflet-control-attribution.leaflet-control {
 }
 
 .job-box:hover {
-    box-shadow: 0 0 20px white; /* Sivý a dlhší tieňový efekt pri prechode myšou */
+    box-shadow: 0 0 20px white; /* Široký a dlhý tieňový efekt pri prechode myšou */
 }
 
 .job-box img {
-    max-width: 100%; /* Ensure the image fits within the box */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px; /* Space below the image */
+    max-width: 100%; /* Zabezpečuje, že obrázok sa zmestí do boxu */
+    height: auto; /* Udržuje pomer strán */
+    margin-bottom: 20px; /* Medzera pod obrázkom */
+}
+
+.apply-button {
+    display: none; /* Skryté predpokladajúc, že na desktop je neviditeľné */
+    margin-top: 20px; /* Priestor nad tlačidlom */
+    padding: 10px 20px; /* Padding okolo textu */
+    background-color: transparent;
+    color: white; /* Biela farba textu */
+    border: none; /* Bez orámovania */
+    border-radius: 5px; /* Zaoblené rohy */
+    cursor: pointer; /* Zmena kurzora na rukavicu */
+    font-weight: bold; /* Tučné písmo */
+    border: 2px solid #fff; /* Biele ohraničenie */
+    margin-left: 35%;
 }
 
 
@@ -777,6 +791,14 @@ div.leaflet-control-attribution.leaflet-control {
 
 /* Skrytie navigácie a zobrazenie hamburger menu na menších obrazovkách */
 @media (max-width: 768px) {
+    body {
+        color: #333; /* Dark grey text color */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('img/phoneBlue.png'); /* Grey to white to grey gradient */
+    }
+
     .header-container {
         flex-direction: row;
         justify-content: space-between;
@@ -1003,6 +1025,10 @@ div.leaflet-control-attribution.leaflet-control {
         width: 90%; /* Zabezpečí, že boxy zaberajú celú šírku rodiča */
         max-width: none; /* Zruší maximálnu šírku pre mobilné zariadenia */
         margin: 0; /* Odstráni horizontálne marginy */
+    }
+
+    .job-box .apply-button {
+        display: block; /* Zobrazí tlačidlo Žiadosť na mobilných zariadeniach */
     }
 
 }

@@ -137,14 +137,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     async function submitForm(formData) {
-        // Simulate sending form data to server (replace with actual fetch request)
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                const success = Math.random() < 0.8; // Simulate 80% success rate
-                resolve({ success });
-            }, 2000); // Simulate 2 seconds delay
+        const endpointUrl = 'http://localhost:3000/send-email';
+    
+        // Convert formData to a plain object
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
         });
+    
+        try {
+            console.log('Sending form data:', data);
+            const response = await fetch(endpointUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', // Specify JSON content type
+                },
+                body: JSON.stringify(data), // Convert the data object to a JSON string
+            });
+    
+            // Parse the JSON response
+            const result = await response.json();
+    
+            if (!response.ok) {
+                throw new Error(result.message || 'Server error');
+            }
+    
+            return { success: true };
+        } catch (error) {
+            console.error('Chyba pri odosielaní formulára:', error.message);
+            return { success: false };
+        }
     }
+    
 
     function getFormHtml(title) {
         const name = JSON.parse(localStorage.getItem('nameData')) || '';
@@ -305,15 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function submitForm(formData) {
-        // Simulate sending form data to server (replace with actual fetch request)
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                const success = Math.random() < 0.8; // Simulate 80% success rate
-                resolve({ success });
-            }, 2000); // Simulate 2 seconds delay
-        });
-    }
+    
 
     // Initialize buttons with their titles
     handleButtonClick('cameraButton', 'Elektronická ochrana');

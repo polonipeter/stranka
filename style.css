@@ -1004,6 +1004,7 @@ div.leaflet-control-attribution.leaflet-control {
     .about h1{
         font-size: 42px;
     }
+    
 
     .overlay img {
         transform: scale(0.7); /* Zväčšenie na 20-krát */

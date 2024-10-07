@@ -15,7 +15,7 @@ header {
     z-index: 1000;
 }
 .header-container {
-    background-color: rgba(0, 0, 0, 0.9); /* Čierna farba s 50% priehľadnosťou */
+    background-color: rgba(23, 23, 23, 0.492); /* Čierna farba s 50% priehľadnosťou */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,21 +113,7 @@ p {
     z-index: 1; /* Ensure the hero section is above the header */
 }
 
-.hero #requestButton {
-    background-color: transparent;
-    border: 2px solid white; /* White border */
-    border-radius: 50px; /* Half of the button height to create an oval shape */
-    padding: 10px 20px;
-    color: white; /* White text color */
-    cursor: pointer;
-    transition: all 0.3s ease; /* Smooth transition */
-    margin-right: 55%;
-}
 
-.hero button#requestButton:hover {
-    background-color: white; /* Blue background on hover */
-    color: black; /* White text color on hover */
-}
 
 .hero h1 {
     margin-right: 40%;
@@ -145,6 +131,7 @@ p {
     padding: 50px 20px;
     margin-bottom: 10px; /* Adjusted margin bottom */
     color: white;
+    text-align: center;
 }
 
 .services p {
@@ -152,49 +139,66 @@ p {
     margin: 0 auto; /* Zarovnanie do stredu */
 }
 
-.service-buttons {
+.service-info {
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin: 20px auto;
+    width: 70%;
+    gap: 100px; /* Vytvorí medzeru medzi obrázkom a textom */
 }
 
-.service-button {
+
+.service-info:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.service-info img {
+    width: 25%; /* Obrazok vzdy zabera 50% sirky */
+    height: auto;
+}
+
+.service-info div {
+    width: 50%; /* Text vzdy zabera 50% sirky */
+    padding: 10px;
+}
+
+.service-info h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.service-info p {
+    margin: 10px 0 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centrovanie horizontálne */
+    align-items: center; /* Centrovanie vertikálne */
+}
+
+.requestbutton {
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    width: 120px;
     align-items: center;
     margin: 0 10px;
-    border: 2px solid #fff; /* Biele ohraničenie */
-    padding: 30px; /* Zvýšené oplátky */
-    width: 160px; /* Zvýšená šírka */
-    height: 160px; /* Zvýšená výška */
+    border: 3px solid #fff; /* Biele ohraničenie */
+    padding: 10px; /* Zvýšené oplátky */
     text-align: center; /* Zarovnanie textu na stred */
     border-radius: 5px; /* Zaoblené rohy */
     transition: all 0.3s ease; /* Hladký prechod */
     font-weight: bold; /* Tučné písmo */
+    font-size: 1.3em;
+    background: transparent;
+    color: white;
 }
 
-.service-button:hover {
+.requestbutton:hover {
     transform: scale(1.05); /* Efekt zväčšenia pri prechode myšou */
     box-shadow: 0 0 20px white; /* Sivý a dlhší tieňový efekt pri prechode myšou */
-}
-
-.service-button img {
-    width: 60px; /* Prispôsobte veľkosť ikony */
-    filter: grayscale(100%); /* Obrázky budú čierne (bez farby) */
-    transition: filter 0.3s; /* Prechodový efekt pre filter */
-}
-
-.service-button .button-text {
-    margin-top: 10px; /* Adjust spacing between icon and text */
-    color: white; /* Dark grey text color */
-    font-size: 1.1em; /* Adjusted font size */
-}
-
-.service-button .button-subtext {
-    margin-top: 5px; /* Adjusted spacing between text lines */
-    font-size: 0.9em; /* Smaller font size for subtext */
-    color: white; /* Light grey text color */
 }
 
 .stats {
@@ -1048,10 +1052,6 @@ div.leaflet-control-attribution.leaflet-control {
         text-align: center;
     }
 
-    .questions h2{
-        font-size: 30px;
-        text-align: center;
-    }
 
     .clients h2{
         color: white;

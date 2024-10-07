@@ -24,7 +24,6 @@
         .leaflet-popup-close-button {
             display: none; /* Hide the close button */
         }
-        
     </style>
     
 </head>
@@ -60,42 +59,71 @@
             <h1>Bezpečnostná služba</h1>
             <p> Vaša Bezpečnostná služba v neustálom nasadení
             </p>
-            <button id="requestButton">Žiadosť</button>
+            <div class="button-container">
+                <button class="requestbutton">Najať</button>
+            </div>
         </div>
     <main>
         <section class="services">
             <h2>Naše služby</h2>
             <p>Pre zabezpečenie plnohodnotnej ochrany klientov naša ponuka zahŕňa fyzickú ochranu - SBS, služby informátora, monitorovací systém ako aj systém
-                motorizovaných patrol a výjazdových vozidiel a v konkrétnych prípadoch aj osobnú ochranu. Pre viacej informácií o danej službe kliknite na príslišnú ikonu.
+                motorizovaných patrol a výjazdových vozidiel a v konkrétnych prípadoch aj osobnú ochranu.
             </p>
-            <div class="service-buttons">
-                <div class="service-button" onclick="handleBoxClick('cameraButton')">
-                    <img src="img/camera.png" alt="Camera Icon">
-                    <span class="button-text">Elektronická ochrana</span>
-                    <span class="button-subtext">Zamedzovanie nedovoleného vstupu</span>
-                </div>
-                <div class="service-button" onclick="handleBoxClick('bodyguardButton')">
-                    <img src="img/serviceIcon2.png" alt="Icon 2">
-                    <span class="button-text">Fyzická ochrana osôb - bodyguard</span>
-                    <span class="button-subtext">Ochrana zdravia, rodiny a toho najdôležitejšieho</span>
-                </div>
-                <div class="service-button" onclick="handleBoxClick('houseButton')">
-                    <img src="img/house.png" alt="Icon 3">
-                    <span class="button-text">Fyzická ochrana v priestoroch zákazníka</span>
-                    <span class="button-subtext">Poskytujeme uniformovanú strážnu službu.</span>
-                </div>
-                <div class="service-button" onclick="handleBoxClick('walkButton')">
-                    <img src="img/dog.png" alt="Icon 5">
-                    <span class="button-text">Hliadka pešej obchôdzky objektu</span>
-                    <span class="button-subtext">Kontrola neporušenosti plášťa budovy</span>
+        
+            <div class="service-info">
+                <img src="img/camera.png" alt="Camera Icon">
+                <div>
+                    <h3>Elektronická ochrana</h3>
+                    <p>Eros a consectetur litora rutrum facilisis phasellus. Curabitur dolor convallis erat quis senectus nisi platea nascetur. 
+                    Class gravida libero natoque ornare finibus magna. Vivamus habitant taciti torquent felis natoque mauris penatibus aptent? 
+                    Habitant diam curabitur euismod fermentum praesent ligula. Nostra quam blandit amet lacinia diam elementum a. 
+                    Elementum dignissim tortor sodales at at justo nam tristique. 
+                    Pretium etiam consectetur sit phasellus pharetra non nec pulvinar.</p>
                 </div>
             </div>
-            <div id="service-content"></div>
-            <button id="cameraButton" style="display:none;">Elektronická ochrana</button>
-            <button id="bodyguardButton" style="display:none;">Fyzická ochrana osôb - bodyguard</button>
-            <button id="houseButton" style="display:none;">Fyzická ochrana v priestoroch zákazníka</button>
-            <button id="walkButton" style="display:none;">Hliadka pešej obchôdzky objektu</button>
+        
+            <div class="service-info">
+                <img src="img/serviceIcon2.png" alt="Icon 2">
+                <div>
+                    <h3>Fyzická ochrana osôb - bodyguard</h3>
+                    <p>Eros a consectetur litora rutrum facilisis phasellus. Curabitur dolor convallis erat quis senectus nisi platea nascetur. 
+                    Class gravida libero natoque ornare finibus magna. Vivamus habitant taciti torquent felis natoque mauris penatibus aptent? 
+                    Habitant diam curabitur euismod fermentum praesent ligula. Nostra quam blandit amet lacinia diam elementum a. 
+                    Elementum dignissim tortor sodales at at justo nam tristique. 
+                    Pretium etiam consectetur sit phasellus pharetra non nec pulvinar.</p>
+                </div>
+            </div>
+        
+            <div class="service-info">
+                <img src="img/house.png" alt="Icon 3">
+                <div>
+                    <h3>Fyzická ochrana v priestoroch zákazníka</h3>
+                    <p>Eros a consectetur litora rutrum facilisis phasellus. Curabitur dolor convallis erat quis senectus nisi platea nascetur. 
+                    Class gravida libero natoque ornare finibus magna. Vivamus habitant taciti torquent felis natoque mauris penatibus aptent? 
+                    Habitant diam curabitur euismod fermentum praesent ligula. Nostra quam blandit amet lacinia diam elementum a. 
+                    Elementum dignissim tortor sodales at at justo nam tristique. 
+                    Pretium etiam consectetur sit phasellus pharetra non nec pulvinar.</p>
+                </div>
+            </div>
+        
+            <div class="service-info">
+                <img src="img/house.png" alt="Icon 3">
+                <div>
+                    <h3>Hliadka pešej obchôdzky objektu</h3>
+                    <p>Eros a consectetur litora rutrum facilisis phasellus. Curabitur dolor convallis erat quis senectus nisi platea nascetur. 
+                    Class gravida libero natoque ornare finibus magna. Vivamus habitant taciti torquent felis natoque mauris penatibus aptent? 
+                    Habitant diam curabitur euismod fermentum praesent ligula. Nostra quam blandit amet lacinia diam elementum a. 
+                    Elementum dignissim tortor sodales at at justo nam tristique. 
+                    Pretium etiam consectetur sit phasellus pharetra non nec pulvinar.</p>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="requestbutton">Najať</button>
+            </div>
         </section>
+        
+
         <section class="stats">
             <div>
                 <h3>Počet zákazníkov</h3>
@@ -113,19 +141,6 @@
                 <p id="deployment">0</p>
             </div>
         </section>
-
-        <section class="questions">
-            <h2>Časté otázky</h2>
-
-            <div class="question">
-                <span>Pracujete na celom Slovensku ?</span>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="answer">
-                <p>Áno, naša firma zabezpečuje služby na celom území Slovenska.</p>
-            </div>
-        </section>
-
 
         <section class="clients">
             <h2>Celoslovenský dosah</h2>

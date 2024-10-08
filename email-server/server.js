@@ -45,7 +45,7 @@ app.post('/send-email', (req, res) => {
         return res.status(400).send('Invalid email address');
     }
 
-    if (!validator.isMobilePhone(phone, 'any')) {
+    if (phone && typeof phone === 'string' && !validator.isMobilePhone(phone, 'any')) {
         return res.status(400).send('Invalid phone number');
     }
 
@@ -56,7 +56,7 @@ app.post('/send-email', (req, res) => {
     const sanitizedMessage = validator.escape(message); // Sanitize message
     const sanitizedName = validator.escape(name);
     const sanitizedEmail = validator.escape(email);
-    const sanitizedPhone = validator.escape(phone);
+    const sanitizedPhone = phone ? validator.escape(phone) : ''; // Sanitize phone if defined
 
     // Configure the email transport using your SMTP server
     const transporter = nodemailer.createTransport({
@@ -71,10 +71,10 @@ app.post('/send-email', (req, res) => {
         from: process.env.EMAIL_USER, // Use environment variable
         to: process.env.EMAIL_USER, // Sending email to the same address
         subject: 'New Message from ' + sanitizedName,
-        text: `You have received a new message from ${sanitizedName}.\n\n` +
+        text: `Nová správa od: ${sanitizedName}.\n\n` +
               `Email: ${sanitizedEmail}\n` +
-              `Phone: ${sanitizedPhone}\n\n` +
-              `Message:\n${sanitizedMessage}`
+              (sanitizedPhone ? `Telefónne číslo: ${sanitizedPhone}\n\n` : '') + // Add phone only if it's defined
+              `Správa:\n${sanitizedMessage}`
     };
 
     // Send the email

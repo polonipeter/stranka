@@ -125,13 +125,11 @@ p {
     max-width: 600px; /* Maximálna šírka pre element <p> */
     padding-left: 16%;
 }
-
 .services {
     text-align: center;
     padding: 50px 20px;
     margin-bottom: 10px; /* Adjusted margin bottom */
     color: white;
-    text-align: center;
 }
 
 .services p {
@@ -148,13 +146,12 @@ p {
     gap: 100px; /* Vytvorí medzeru medzi obrázkom a textom */
 }
 
-
 .service-info:nth-child(even) {
     flex-direction: row-reverse;
 }
 
 .service-info img {
-    width: 25%; /* Obrazok vzdy zabera 50% sirky */
+    width: 25%; /* Obrazok vzdy zabera 25% sirky */
     height: auto;
 }
 
@@ -730,49 +727,6 @@ div.leaflet-control-attribution.leaflet-control {
     font-size: 28px;
 }
 
-.job-boxes {
-    display: flex;
-    justify-content: space-between; /* Ensures there's space between the two halves */
-    padding: 20px; /* Padding from the edges of the screen */
-    gap: 60px; /* Space between the two boxes */
-    max-width: 1200px; /* Optional: Limit max width for better aesthetics on large screens */
-    margin: 0 auto; /* Center the content horizontally */
-}
-
-.job-box {
-    flex: 1; /* Makes each box take up equal width */
-    padding: 20px; /* Padding inside each job box */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for separation */
-    border: 2px solid #fff; /* Biele ohraničenie */
-    border-radius: 5px; /* Zaoblené rohy */
-    transition: all 0.3s ease; /* Hladký prechod */
-    cursor: pointer;
-}
-
-.job-box:hover {
-    box-shadow: 0 0 20px white; /* Široký a dlhý tieňový efekt pri prechode myšou */
-}
-
-.job-box img {
-    max-width: 100%; /* Zabezpečuje, že obrázok sa zmestí do boxu */
-    height: auto; /* Udržuje pomer strán */
-    margin-bottom: 20px; /* Medzera pod obrázkom */
-}
-
-.apply-button {
-    display: none; /* Skryté predpokladajúc, že na desktop je neviditeľné */
-    margin-top: 20px; /* Priestor nad tlačidlom */
-    padding: 10px 20px; /* Padding okolo textu */
-    background-color: transparent;
-    color: white; /* Biela farba textu */
-    border: none; /* Bez orámovania */
-    border-radius: 5px; /* Zaoblené rohy */
-    cursor: pointer; /* Zmena kurzora na rukavicu */
-    font-weight: bold; /* Tučné písmo */
-    border: 2px solid #fff; /* Biele ohraničenie */
-    margin-left: 35%;
-}
-
 
 /* Štýly pre hamburger menu */
 .hamburger-menu {
@@ -1028,25 +982,6 @@ div.leaflet-control-attribution.leaflet-control {
         font-size: 30px;
     }
 
-    .job-boxes {
-        display: flex;
-        flex-direction: column; /* Zoradenie boxov vertikálne */
-        align-items: center; /* Horizontálne centrovanie boxov */
-        justify-content: center; /* Vertikálne centrovanie boxov */
-        gap: 20px; /* Zmenšenie medzery medzi boxmi */
-        padding: 20px; /* Padding od okrajov obrazovky */
-    }
-
-    .job-box {
-        width: 90%; /* Zabezpečí, že boxy zaberajú celú šírku rodiča */
-        max-width: none; /* Zruší maximálnu šírku pre mobilné zariadenia */
-        margin: 0; /* Odstráni horizontálne marginy */
-    }
-
-    .job-box .apply-button {
-        display: block; /* Zobrazí tlačidlo Žiadosť na mobilných zariadeniach */
-    }
-
     .services h2{
         font-size: 30px;
         text-align: center;
@@ -1061,6 +996,25 @@ div.leaflet-control-attribution.leaflet-control {
 
     .clients p {
         font-size: 16px; /* Môžeš upraviť podľa potreby */
+    }
+
+    .service-info:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .service-info {
+        flex-direction: column; /* Zmena smeru flexu na stĺpec */
+        width: 90%; /* Šírka divu sa zmení na 90% */
+        gap: 20px; /* Zníženie medzery medzi obrázkom a textom */
+    }
+
+    .service-info img {
+        width: 100%; /* Obrazok zabera 100% sirky */
+        height: auto; /* Zachováva pomer strán obrázka */
+    }
+
+    .service-info div {
+        width: 100%; /* Text zabera 100% sirky */
     }
     
 

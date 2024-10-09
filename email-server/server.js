@@ -70,7 +70,7 @@ app.post('/send-email', (req, res) => {
     const mailOptions = {
         from: process.env.EMAIL_USER, // Use environment variable
         to: process.env.EMAIL_USER, // Sending email to the same address
-        subject: 'New Message from ' + sanitizedName,
+        subject: 'Nová správa od ' + sanitizedName,
         text: `Nová správa od: ${sanitizedName}.\n\n` +
               `Email: ${sanitizedEmail}\n` +
               (sanitizedPhone ? `Telefónne číslo: ${sanitizedPhone}\n\n` : '') + // Add phone only if it's defined

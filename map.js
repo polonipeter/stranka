@@ -26,8 +26,8 @@ var AlbasecIcon = L.icon({
 });
 
 // Function to add a marker with a custom icon
-function addMarker(lat, lng, companyName, icon) {
-    var marker = L.marker([lat, lng], { icon: icon }).addTo(map).bindPopup(companyName);
+function addMarker(lat, lng, icon) {
+    var marker = L.marker([lat, lng], { icon: icon }).addTo(map)
     marker.on('mouseover', function (e) {
         this.openPopup();
     });
@@ -62,7 +62,7 @@ var towns = [
 
 // Add markers to the map for each town
 towns.forEach(function(town) {
-    addMarker(town.lat, town.lng, 'Company ' + town.name, AlbasecIcon);
+    addMarker(town.lat, town.lng, AlbasecIcon);
 });
 
 map.once('click', function() {

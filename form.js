@@ -140,15 +140,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify(data),
             });
-
-            const result = await response.json();
-
+            console.log(response)
+            const contentType = response.headers.get('Content-Type') || '';
+            let result;
+            
+            if (contentType.includes('application/json')) {
+                result = await response.json(); // Parse JSON if it's in JSON format
+            } else {
+                result = await response.text(); // Parse as text if it's not JSON
+            }
+            console.log('Response:', result);
             if (!response.ok) {
+                console.log(response)
                 throw new Error(result.message || 'Server error');
             }
-
+            alert("Email úspešne odoslaný")
             return { success: true };
         } catch (error) {
+            alert("Email sa nepodarilo odoslať. Skúste nás kontaktovať telefonicky alebo na email podporaalbasec@gmail.com.")
             console.error('Chyba pri odosielaní formulára:', error.message);
             return { success: false };
         }

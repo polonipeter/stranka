@@ -101,29 +101,34 @@ p {
 }
 
 .hero {
-    background-image: url('img/pozadie.jfif'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 400px;
-    padding: 150px 20px;
+    background-image: url('img/logo.png'); /* Replace with your image path */
+    background-size: contain; /* Ensure the image fits within the section without cropping */
+    background-position: center; /* Keep the image centered */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 400px; /* Adjust height to the appropriate size */
+    padding: 100px 20px; /* Adjust padding as needed */
     text-align: center;
     color: #fff;
-    position: relative; /* Ensure the hero section remains in place */
-    z-index: 1; /* Ensure the hero section is above the header */
+    position: relative;
+    z-index: 1;
 }
 
 
 
-.hero h1 {
-    margin-right: 40%;
-    font-size: 3em; /* Example: Increase font size for emphasis */
+.content {
+    padding: 20px; /* Add padding or margins to position the content as needed */
+    text-align: center;
+    color: #fff;
+}
+.content h1 {
+    font-size: 3em;
+    color: #ffffff; /* Change the color of the text as needed */
+    margin-bottom: 10px;
 }
 
-.hero p {
-    font-size: 1.01em; /* Example: Increase font size for readability */
-    max-width: 600px; /* Maximálna šírka pre element <p> */
-    padding-left: 16%;
+.content p {
+    font-size: 1.2em;
+    color: #ffffff; /* Adjust the color */
 }
 .services {
     text-align: center;
@@ -197,6 +202,8 @@ p {
     transform: scale(1.05); /* Efekt zväčšenia pri prechode myšou */
     box-shadow: 0 0 20px white; /* Sivý a dlhší tieňový efekt pri prechode myšou */
 }
+
+
 
 .stats {
     display: flex;

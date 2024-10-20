@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors'); // Import cors
 const rateLimit = require('express-rate-limit'); // Rate limiting
 const validator = require('validator'); // For input validation
-const helmet = require('helmet'); // For setting secure headers
 
+const helmet = require('helmet'); // For setting secure headers
 const app = express();
 const port = 3000; // HTTP port
 

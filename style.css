@@ -232,24 +232,17 @@ p {
     height: auto;
 }
 
-
 .contact-us {
     background-image: url('img/security.png'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: grid; /* Použitie Grid Layout na usporiadanie stĺpcov */
-    grid-template-columns: 0.5fr 1.5fr 1fr; /* Tri stĺpce s rôznymi šírkami */
+    grid-template-columns: 1fr 2fr 1fr; /* Prvý stĺpec širší než ostatné dva */
     gap: 20px; /* Medzera medzi stĺpcami */
     padding: 50px 20px;
     box-sizing: border-box; /* Zabezpečuje, že padding je zahrnutý v celkovej šírke kontajnera */
     color: white;
-}
-
-.contact-us h2 {
-    margin-top: 0; /* Odstránenie predvoleného okraja nadpisu */
-    margin-bottom: 10px; /* Priestor pod nadpisom */
-    font-size: 40px;
 }
 
 .contact-logo {
@@ -260,37 +253,28 @@ p {
 
 .contact-logo img {
     width: 100%; /* Umožňuje obrázku prispôsobiť sa šírke stĺpca */
-    max-width: 150px; /* Nastavte maximálnu šírku obrázku */
+    max-width: 200px; /* Nastavte maximálnu šírku obrázku */
     height: auto; /* Udrží proporcie obrázku */
 }
 
-.contact-logo-content {
-    max-width: 100%; /* Umožňuje textovému bloku prispôsobiť sa šírke stĺpca */
-    padding-right: 40%;
+.contact-columns {
+    display: flex; /* Flexbox na zarovnanie stĺpcov vedľa seba */
+    justify-content: space-between; /* Rovnomerne rozdelí priestor medzi stĺpce */
+    grid-template-columns: 80% 30%;
 }
 
-.contact-logo-content h2 {
-    margin-top: 0; /* Odstránenie predvoleného okraja nadpisu */
-    margin-bottom: 10px; /* Priestor pod nadpisom */
+.contact-columns h2{
+    font-size: 3em;
 }
 
-.contact-logo-content p {
-    margin: 0; /* Odstránenie predvoleného okraja odstavca */
+.contact-columns h3{
+    font-size: 1.5em;
 }
 
-.contact-info {
-    max-width: 100%; /* Umožňuje bloku s kontaktnými informáciami prispôsobiť sa šírke stĺpca */
-}
-
-.contact-info h3 {
-    font-size: 30px;
-    margin: 5px 0; /* Priestor nad a pod podnadpisom */
-}
-
-.contact-info p {
-    margin: 5px 0; /* Priestor nad a pod odstavcom */
+.contact-columns p{
     font-size: 1.2em;
 }
+
 
 /* Zmazat? */
 .contact-form {
@@ -712,6 +696,10 @@ div.leaflet-control-attribution.leaflet-control {
     color: white;
 }
 
+.career p{ text-align: center;}
+
+.career ul{ padding-left: 15%}
+
 .career h1 {
     text-align: center;
     font-size: 52px;
@@ -855,62 +843,38 @@ div.leaflet-control-attribution.leaflet-control {
     }
 
     .contact-us {
-        background-image: url('img/security.png'); /* Nahradiť cestu k obrázku podľa potreby */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex; /* Použiť Flexbox na usporiadanie obsahu */
-        flex-direction: column; /* Umiestnenie detí vertikálne */
-        align-items: center; /* Horizontálne zarovnanie všetkých detí na stred */
-        padding: 50px 20px;
-        box-sizing: border-box; /* Zabezpečuje, že padding je zahrnutý v celkovej šírke kontajnera */
-        color: white;
+        display: flex;
+        flex-direction: column; /* Zabezpečí, že všetky elementy sa zoradia pod seba */
+        align-items: center; /* Zarovnanie všetkých položiek na stred */
     }
 
-    /* Sekcia s logom */
-    .contact-logo {
-        display: flex; /* Flexbox na zarovnanie obrázku a textu */
-        align-items: center; /* Vertikálne zarovnanie obrázku na stred */
-        justify-content: center; /* Horizontálne zarovnanie obrázku na stred */
+    .contact-columns {
+        display: flex;
+        flex-direction: column; /* Umiestni jednotlivé stĺpce jeden pod druhým */
         width: 100%; /* Šírka na celú šírku rodiča */
+    }
+
+    .contact-column {
+        width: 100%; /* Zabezpečí, že každý stĺpec bude na celú šírku */
+        margin-bottom: 20px; /* Priestor medzi stĺpcami */
+        text-align: center; /* Zarovná text na stred */
+    }
+
+    .contact-logo,
+    .contact-logo-content,
+    .contact-info {
+        width: 100%; /* Šírka na celú šírku rodiča */
+        text-align: center; /* Zarovná všetko na stred */
     }
 
     .contact-logo img {
-        width: 100%; /* Prispôsobenie šírky obrázku */
-        max-width: 150px; /* Maximálna šírka obrázku */
-        height: auto; /* Udrží proporcie obrázku */
+        max-width: 120px; /* Zmenší logo na menších obrazovkách, ak je potrebné */
     }
-
-    .contact-logo-content {
-        text-align: center; /* Zarovnanie textu na stred */
-        padding: 20px; /* Padding okolo textového bloku */
-        width: 100%; /* Šírka na celú šírku rodiča */
+    .contact-us h2{
+        font-size: 2em;
     }
-
-    .contact-logo-content h2 {
-        margin-top: 0; /* Odstránenie predvoleného okraja nadpisu */
-        margin-bottom: 10px; /* Priestor pod nadpisom */
-    }
-
-    .contact-logo-content p {
-        margin: 0; /* Odstránenie predvoleného okraja odstavca */
-    }
-
-    /* Sekcia s kontaktnými informáciami */
-    .contact-info {
-        width: 100%; /* Šírka na celú šírku rodiča */
-        text-align: center; /* Zarovnanie textu na stred */
-        padding: 20px; /* Padding okolo textového bloku */
-    }
-
-    .contact-info h3 {
-        font-size: 25px;
-        margin: 5px 0; /* Priestor nad a pod podnadpisom */
-    }
-
-    .contact-info p {
-        margin: 5px 0; /* Priestor nad a pod odstavcom */
-        font-size: 1.2em;
+    .contact-us p, h3{
+        font-size: 1.5em;
     }
 
     .popup-form-container {

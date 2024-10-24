@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     async function submitForm(formData) {
-        const endpointUrl = 'http://localhost:3000/send-email';
+        const endpointUrl = 'https://albasec.sk:3000/send-email';
 
         const data = {};
         formData.forEach((value, key) => {

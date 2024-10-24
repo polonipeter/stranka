@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 // Enable CORS for local file access (file:// protocol)
 app.use(cors({
     origin: (origin, callback) => {
-        if (!origin || origin === 'null' || origin.startsWith('file://')) {
+        if (!origin || origin === 'null' || origin.startsWith('https://albasec.sk')) {
             callback(null, true); // Allow access for local HTML files
         } else {
             callback(new Error('Not allowed by CORS')); // Restrict other origins

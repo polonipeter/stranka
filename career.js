@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function submitForm(formData) {
-        const endpointUrl = 'https://albasec.sk:3000/send-email';
+        const endpointUrl = 'https://stranka-flame.vercel.app/api/send-email';
 
         const data = {};
         formData.forEach((value, key) => {

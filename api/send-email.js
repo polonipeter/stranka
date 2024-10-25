@@ -1,38 +1,5 @@
 const nodemailer = require('nodemailer');
-const cors = require('cors'); 
-const rateLimit = require('express-rate-limit');
 const validator = require('validator');
-const helmet = require('helmet');
-const express = require('express');
-require('dotenv').config(); // Load environment variables
-
-const app = express();
-
-// Middleware to parse JSON bodies
-app.use(express.json());
-
-// Enable CORS for specific origin
-app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || origin === 'null' || origin.startsWith('https://albasec.sk')) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    optionsSuccessStatus: 200
-}));
-
-// Helmet for secure HTTP headers
-app.use(helmet());
-
-// Rate limiting middleware
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, 
-    message: 'Too many requests from this IP, please try again later'
-});
-app.use(limiter);
 
 module.exports = async (req, res) => {
     // Only allow POST requests

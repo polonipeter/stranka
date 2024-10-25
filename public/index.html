@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="sk">
+<!-- musime upravit styl pop-up formularov -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albasec</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        .leaflet-popup-content-wrapper {
+            background-color: white; /* Popup background color */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Padding inside the popup */
+            box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Drop shadow */
+        }
+        .leaflet-popup-content {
+            font-size: 14px; /* Popup content font size */
+            line-height: 1.4; /* Line height for readability */
+        }
+        .leaflet-popup-close-button {
+            display: none; /* Hide the close button */
+        }
+    </style>
+    
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-container" id="headerContainer">
+            <div class="logo">
+                <img src="img/logo/Albasec-logo2.png" alt="ALBASEC">
+                <h2>ALBASEC SECURITY</h2>
+            </div>
+            <!-- Hamburger menu pre mobilné zariadenia -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="index.html">Domov</a></li>
+                    <li><a href="about.html">O nás</a></li>
+                    <li><a href="career.html">Kariéra</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61567423286430" target="_blank" rel="noopener noreferrer">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/albasec_s.r.o/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="hero"></div> <!-- Hero section with background image only -->
+
+    <!-- Text and button below the hero section -->
+    <div class="content">
+        <h1>Bezpečnostná služba</h1>
+        <p>Vaša bezpečnosť a ochrana vášho majetku sú našou najvyššou prioritou</p>
+        <div class="button-container">
+            <button class="requestbutton">Najať</button>
+        </div>
+    </div>
+    <main>
+        <section class="services">
+            <h2>Naše služby</h2>
+            <p>Pre zabezpečenie plnohodnotnej ochrany klientov naša ponuka zahŕňa fyzickú ochranu - SBS, služby informátora, monitorovací systém ako aj systém
+                motorizovaných patrol a výjazdových vozidiel a v konkrétnych prípadoch aj osobnú ochranu.
+            </p>
+        
+            <div class="service-info">
+                <img src="img/bodyguard 2.jfif" alt="Icon 2">
+                <div>
+                    <h3>Fyzická ochrana osôb - bodyguard</h3>
+                    <p>Podľa konkrétnych požiadaviek klienta je poskytovaná formou jednorázovej, krátkodobej alebo dlhodobej ochrany. Samozrejmosťou je vypracovanie detailého plánu, jeho priebežná koordinácia a zabezpečenie adekvátneho materiálno-technického zabezpečenia.</p>
+                </div>
+            </div>
+        
+            <div class="service-info">
+                <img src="img/Kontakt 1.jfif" alt="Icon 3">
+                <div>
+                    <h3>Fyzická ochrana v priestoroch zákazníka</h3>
+                    <p>Prítomnosť zaškolených a skúsených zamestnancov v objekte má nielen preventívny účinok, ale predovšetkým zaručuje ich schopnosť okamžite reagovať na vzniknutý bezpečnostný incident.</p>
+                
+                </div>
+            </div>
+        
+            <div class="service-info">
+                <img src="img/Hliadka pešej obchôdzky objektu 1.jfif" alt="Icon 3">
+                <div>
+                    <h3>Hliadka pešej obchôdzky objektu</h3>
+                    <p>Je realizovaná predovšetkým pravidelným výkonom dohľadu, kde naši zamestnanci vykonávajú aktívne bezpečnostné pochôdzky priamo v objekte. Jedná sa o nepretržité alebo dočasné služby fyzickej ochrany s implementáciou požiadaviek a kritérií klienta.</p>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="requestbutton">Najať</button>
+            </div>
+        </section>
+        
+
+        <section class="stats">
+            <div>
+                <h3>Počet zákazníkov</h3>
+                <img src="img/customers.png" alt="Customers Icon">
+                <p id="customers">0</p>
+            </div>
+            <div>
+                <h3>Rokov praxe</h3>
+                <img src="img/years.png" alt="Years Icon">
+                <p id="experience">0</p>
+            </div>
+            <div>
+                <h3>Nasadenie</h3>
+                <img src="img/time.png" alt="Deployment Icon">
+                <p id="deployment">0</p>
+            </div>
+        </section>
+
+        <section class="clients">
+            <h2>Celoslovenský dosah</h2>
+            <p>Medzi našich dlhodobých klientov partia väčšie spoločnosti, ale aj menšie súkromné firmy a fyzické osoby.
+            </p>
+            <div class="customer-boxes">
+                <div class="customer-box">
+                    <img src="img/logo/icona1.ico" alt="Icon 3">
+                    <p>Franco real estates</p>
+                </div>
+                <div class="customer-box">
+                    <img src="img/logo/icona2.ico" alt="Icon 3">
+                    <p>Card casino</p>
+                </div>
+                <div class="customer-box">
+                    <img src="img/logo/icona3.ico" alt="Icon 3">
+                    <p>Go4games</p>
+                </div>
+                <div class="customer-box">
+                    <img src="img/logo/icona4.ico" alt="Icon 3">
+                    <p>Doxxbet</p>
+                </div>
+                <div class="customer-box">
+                    <img src="img/logo/icona5.ico" alt="Icon 3">
+                    <p>Excelclub</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="map">
+            <div id="map" class="map-container"></div>
+        </section>
+
+        <section class="contact-us">
+            <div class="contact-logo">
+                <img src="img/logo/Albasec-logo2.png" alt="Albasec logo">
+            </div>
+            
+            <div class="contact-info" id="contact">
+                
+                <div class="contact-columns">
+                    <div class="contact-column">
+                        <h2>Kontakt</h2>
+                        <h3>Konateľ: +421 910 262 515</h3>
+                        <h3>Manažér: +421 949 833 964</h3>
+                    </div>
+                    <div class="contact-column">
+                        <p>info@albasec.sk</p>
+                        <p>Pod Brehmi 4</p>
+                        <p>841 03 Bratislava</p>
+                        <p>IČO: 53 266 021</p>
+                        <p>DIČ: SK0000123456</p>
+                    </div>
+                </div>
+                <form id="contactForm" action="#" method="POST"></form>
+        </section>
+        
+        <section class="copyright">
+            <p>Copyright (C) 2024-2025 by ALBASEC, s.r.o.</p>
+        </section>
+
+    </main>
+    <script src="phone.js"></script>
+    <script src="map.js"></script>
+    <script src="script.js"></script>
+    <script src="form.js"></script>
+    <script src="move.js"></script>
+    
+    
+</body>
+
+</html>

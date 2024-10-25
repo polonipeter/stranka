@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="sk">
+<!-- musime upravit styl pop-up formularov -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albasec</title>
+    <link rel="icon" type="image/png" href="img/logo/Albasec-logo2.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="lic.js"></script>
+    
+
+    <style>
+        .leaflet-popup-content-wrapper {
+            background-color: white; /* Popup background color */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Padding inside the popup */
+            box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Drop shadow */
+        }
+        .leaflet-popup-content {
+            font-size: 14px; /* Popup content font size */
+            line-height: 1.4; /* Line height for readability */
+        }
+        .leaflet-popup-close-button {
+            display: none; /* Hide the close button */
+        }
+        
+    </style>
+    
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-container" id="headerContainer">
+            <div class="logo">
+                <img src="img/logo/Albasec-logo2.png" alt="ALBASEC">
+                <h2>ALBASEC SECURITY</h2>
+            </div>
+            <!-- Hamburger menu pre mobilné zariadenia -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="index.html">Domov</a></li>
+                    <li><a href="about.html">O nás</a></li>
+                    <li><a href="career.html">Kariéra</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61567423286430" target="_blank" rel="noopener noreferrer">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/albasec_s.r.o/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="about">
+        <h1>O nás</h1>
+        <p>
+            Spoločnosť ALBASEC s.r.o, v súlade s udelenou licenciou na prevádzkovanie strážnej služby, zabezpečuje ochranu majetku a osôb. Zodpovedné a dôsledné plnenie ponúkaných služieb garantuje tím plne vyškolených, bezúhonných zamestnancov s dlhoročnou praxou a skúsenosťami v pracovných pozíciách strážnika a informátora.
+
+            Portfólio našej spoločnosti zahŕňa stráženie rôznorodých objektov, ako sú súkromné rezidencie, administratívne budovy, stavby, priemyselné parky, až po objekty strategického významu, ako aj fyzickú ochranu osôb v bežných situáciách či pri špecifických udalostiach.
+            
+            Našou garanciou je individuálny prístup a maximálne profesionálne nasadenie pri tvorbe optimálneho strategického plánu ochrany, šitého na mieru každého klienta. Naším cieľom je stať sa popredným, komplexným a stabilným partnerom s celoslovenskou pôsobnosťou, s dôrazom na profesionalitu, diskrétnosť a spoľahlivosť.        </p>
+        <h1>Naše licencie a certifikáty</h1>
+        <div class="certificates">
+            <div class="certificate">
+                <div class="image-container">
+                    <img class="zoom-image" src="img/lic/20240805103920.svg" alt="Fullscreen Obrázok">
+                </div>
+                <h3>Licencia strážnej služby PS: 001583</h3>
+                <p>platnosť do: 12.6.2031</p>
+                <p>Držiteľ licencie je oprávnený vykonávať činnosť strážnej služby v zmysle zákona o poskytovaní služieb v oblasti SBS a o zmene a doplnení niektorých zákonov (zákon o súkromnej bezpečnosti).</p>
+            </div>
+            <div class="certificate">
+                <div class="image-container">
+                    <img class="zoom-image" src="img/lic/ISO9001.jpg" alt="Certifikát EN ISO 9001:2015">
+                </div>
+                <h3>Certifikát EN ISO 9001:2015</h3>
+                <p>platnosť do: 10.10.2024</p>
+                <p>Držiteľ certifikátu v oblasti poskytovania SBS služieb v zmysle ISO 9001:2015 vydané eucert, s.r.o. dňa 11.10.2021.</p>
+            </div>
+        </div>
+
+        <!-- Overlay sa bude používať pre všetky obrázky -->
+        <div id="fullscreenOverlay" class="overlay">
+            <img id="fullscreenImage" src="" alt="Fullscreen Obrázok">
+        </div>
+
+    </section>
+    <section class="contact-us">
+        <div class="contact-logo">
+            <img src="img/logo/Albasec-logo2.png" alt="Albasec logo">
+        </div>
+        
+        <div class="contact-info" id="contact">
+            
+            <div class="contact-columns">
+                <div class="contact-column">
+                    <h2>Kontakt</h2>
+                    <h3>Konateľ: +421 910 262 515</h3>
+                    <h3>Manažér: +421 949 833 964</h3>
+                </div>
+                <div class="contact-column">
+                    <p>info@albasec.sk</p>
+                    <p>Pod Brehmi 4</p>
+                    <p>841 03 Bratislava</p>
+                    <p>IČO: 53 266 021</p>
+                    <p>DIČ: SK0000123456</p>
+                </div>
+            </div>
+    </section>
+
+    <section class="copyright">
+        <p>Copyright (C) 2024-2025 pre ALBASEC, s.r.o.</p>
+    </section>
+
+</body>
+<script src="phone.js"></script>
+
+</html>

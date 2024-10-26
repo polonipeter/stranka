@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     async function submitForm(formData) {
-        const endpointUrl = 'https://albasec.sk:3000/send-email';
+        const endpointUrl = '/send-email.php'; // New PHP endpoint
 
         const data = {};
         formData.forEach((value, key) => {
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Response:', result);
             if (!response.ok) {
                 console.log(response)
-                throw new Error(result.message || 'Server error');
+                throw new Error(result.error || 'Server error');
             }
             alert("Email úspešne odoslaný")
             return { success: true };
